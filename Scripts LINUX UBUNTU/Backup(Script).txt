@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Define o diretório que será salvo (ajuste o caminho conforme necessário)
+diretorio_backup="/home/tiagosrv/devops"
+
+# Define o nome do arquivo com Timestamp (AnoMesDia_HoraMinutoSegundo)
+nome_arquivo="backup_$(date +%Y%m%d_%H%M%S).tar.gz"
+
+# Cria o arquivo compactado
+tar -zcf "$nome_arquivo" "$diretorio_backup"
+
+# Mensagem de sucesso
+echo "Backup Concluído em $nome_arquivo"

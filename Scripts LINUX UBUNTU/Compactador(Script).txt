@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Verifica se foram passados menos de 2 argumentos
+if [ "$#" -lt 2 ]; then
+    echo "O programa, $0 requer o nome do arquivo e arquivos a serem compactados"
+    exit 1
+fi
+
+# O primeiro argumento ($1) será o nome do arquivo final
+arquivo_saida="$1"
+
+# Todos os argumentos a partir do segundo ($@:2) serão os arquivos para compactar
+arquivos=("${@:2}")
+
+# Executa a compactação
+tar -czf "$arquivo_saida" "${arquivos[@]}"
