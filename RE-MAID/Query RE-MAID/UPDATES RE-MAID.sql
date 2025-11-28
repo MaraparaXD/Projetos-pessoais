@@ -49,3 +49,19 @@ UPDATE historico_de_colaborador
   SET 
      data_final = '25/11/2025'
   WHERE id_colaborador = 'COLAB-002';
+
+
+ -- Atualizando as datas de compra para 2023 para garantir consistência com o histórico de chamados
+
+
+UPDATE dispositivo 
+SET data_compra = '2023-03-15' 
+WHERE id IN (1, 2, 3);
+
+UPDATE dispositivo 
+SET data_compra = '2023-06-20' 
+WHERE id IN (4, 5, 6);
+
+UPDATE dispositivo 
+SET data_compra = '2023-11-10' 
+WHERE id IN (7, 8, 9, 10);
