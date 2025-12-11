@@ -1,0 +1,2 @@
+->Copia de segurança<-
+tar -czf /home/tiagosrv/copias_de_segurança/backup.tar.gz /home/tiagosrv/devops

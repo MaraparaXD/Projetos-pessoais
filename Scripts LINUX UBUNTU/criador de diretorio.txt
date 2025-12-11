@@ -1,0 +1,5 @@
+->criador de diretorios<-
+#!/bin/bash
+echo "Digite o nome do Diretorio"
+read nome_diretorio
+mkdir $nome_diretorio
