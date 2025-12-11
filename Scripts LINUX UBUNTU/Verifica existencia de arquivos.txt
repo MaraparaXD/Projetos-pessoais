@@ -1,0 +1,9 @@
+->Verificação de existencia de arquivo<-
+#!/bin/bash
+echo "Digite o nome do Arquivo"
+read nome_arquivo     
+if [ -e $nome_arquivo ]; then
+   echo "Arquivo já existe"
+else
+   echo "Arquivo não existe."
+fi
