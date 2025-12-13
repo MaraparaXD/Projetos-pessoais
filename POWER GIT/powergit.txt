@@ -1,0 +1,161 @@
+#!/usr/bin/env bash
+
+# ==========================
+#  CONFIGURAÇÕES VISUAIS
+# ==========================
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+CYAN='\033[0;36m'
+NC='\033[0m' # No Color
+
+echo -e "${BLUE}=== Git Workflow Assistant (Versão Anti-Paia) ===${NC}"
+
+# ==========================
+#  VALIDAÇÕES INICIAIS
+# ==========================
+# 1. Verifica se existe pasta .git
+if [ ! -d ".git" ]; then
+    echo -e "${RED}Erro: Você não está na raiz de um repositório Git.${NC}"
+    exit 1
+fi
+
+branch=$(git rev-parse --abbrev-ref HEAD)
+echo -e "Branch atual: ${CYAN}$branch${NC}"
+
+# 2. Verifica se há algo para commitar (incluindo arquivos novos não rastreados)
+if git diff --quiet && git diff --cached --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; then
+    echo -e "${RED}\nNada para commitar (working tree clean).${NC}"
+    exit 0
+fi
+
+echo -e "\n${YELLOW}Status dos Arquivos:${NC}"
+git status -s
+echo ""
+
+# ==========================
+#  1. STAGING (ADD)
+# ==========================
+echo -e "Deseja adicionar todos os arquivos (${CYAN}git add .${NC})?"
+read -p "(s/n - 'n' abre modo interativo): " add_choice
+
+if [[ "$add_choice" =~ ^[sS]$ ]]; then
+    git add .
+else
+    echo -e "${YELLOW}Abrindo modo interativo (git add -p)...${NC}"
+    git add -p
+    # Se o usuário desistir no meio do modo interativo e não adicionar nada
+    if git diff --cached --quiet; then
+         echo -e "${RED}Nada foi adicionado ao stage. Abortando.${NC}"
+         exit 1
+    fi
+fi
+
+# ==========================
+#  2. CONSTRUÇÃO DO COMMIT
+# ==========================
+# Lista em MAIÚSCULO conforme solicitado
+opcoes=("FEAT" "FIX" "REFACTOR" "DOCS" "STYLE" "TEST" "CHORE" "PERF" "CI" "BUILD")
+
+echo -e "\n${BLUE}Tipo de alteração:${NC}"
+select tipo in "${opcoes[@]}"; do
+    if [[ -n "$tipo" ]]; then
+        break
+    else
+        echo "Opção inválida. Tente novamente."
+    fi
+done
+
+# Escopo Opcional
+read -p "Escopo (opcional, ex: login, api): " escopo
+
+# Título (Obrigatório)
+while true; do
+    read -p "Título do commit: " titulo
+    if [[ -n "$titulo" ]]; then
+        break
+    else
+        echo -e "${RED}O título não pode ser vazio.${NC}"
+    fi
+done
+
+# Corpo Opcional (Descrição detalhada)
+echo -e "\nDeseja adicionar uma descrição detalhada? (Corpo do commit)"
+read -p "(s/n): " corpo_choice
+
+corpo=""
+if [[ "$corpo_choice" =~ ^[sS]$ ]]; then
+    echo -e "${YELLOW}Dica: Pressione ENTER duas vezes para finalizar o corpo.${NC}"
+    while IFS= read -r line; do
+        [[ -z "$line" ]] && break
+        corpo+="$line"$'\n'
+    done
+fi
+
+# ==========================
+#  MONTAGEM DA MENSAGEM
+# ==========================
+# Formato: 「TIPO」 Título
+# Adicionei um espaço após o fechamento 」 para ficar legível
+if [[ -n "$escopo" ]]; then
+    header="「$tipo」 ($escopo) $titulo"
+else
+    header="「$tipo」 $titulo"
+fi
+
+# Junta cabeçalho e corpo (se existir)
+if [[ -n "$corpo" ]]; then
+    commit_msg="$header"$'\n\n'"$corpo"
+else
+    commit_msg="$header"
+fi
+
+# ==========================
+#  3. REVISÃO E COMMIT
+# ==========================
+echo -e "\n${BLUE}=== Revisão do Commit ===${NC}"
+echo -e "${CYAN}----------------------------------------${NC}"
+echo -e "$commit_msg"
+echo -e "${CYAN}----------------------------------------${NC}"
+
+read -p "Confirmar commit? (s/n): " confirm_commit
+if [[ ! "$confirm_commit" =~ ^[sS]$ ]]; then
+    echo -e "${RED}Cancelado.${NC}"
+    exit 0
+fi
+
+if git commit -m "$commit_msg"; then
+    echo -e "${GREEN}✔ Commit realizado com sucesso!${NC}"
+else
+    echo -e "${RED}Erro ao commitar.${NC}"
+    exit 1
+fi
+
+# ==========================
+#  4. PUSH OPCIONAL
+# ==========================
+# Tenta descobrir qual é o branch remoto (upstream)
+upstream=$(git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null)
+
+echo -e "\n${YELLOW}Deseja fazer o PUSH agora para $branch?${NC}"
+read -p "(s/n): " push_confirm
+
+if [[ "$push_confirm" =~ ^[sS]$ ]]; then
+    echo -e "Enviando..."
+    if [[ -z "$upstream" ]]; then
+        # Se for branch nova, define upstream automaticamente
+        git push --set-upstream origin "$branch"
+    else
+        git push
+    fi
+    
+    # Verifica se o push deu certo (código de saída 0)
+    if [ $? -eq 0 ]; then
+        echo -e "${GREEN}✔ Código enviado para o repositório remoto!${NC}"
+    else
+        echo -e "${RED}❌ Falha no push.${NC}"
+    fi
+else
+    echo -e "${BLUE}ℹ Push adiado. Alterações estão salvas localmente.${NC}"
+fi
