@@ -1,0 +1,9 @@
+->Monitorar Servidor Nginx<-
+#!/bin/bash
+
+if pgrep nginx &> /dev/null
+  then
+     echo "Nginx está em operação $(date +"%Y-%m-%d %H:%M:%S")"
+else
+   echo   echo "Nginx está fora de operação $(date +"%Y-%m-%d %H:%M:%S")"
+fi
