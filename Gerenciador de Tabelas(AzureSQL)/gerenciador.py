@@ -6,10 +6,10 @@ from rich.panel import Panel
 from rich.prompt import Prompt, Confirm
 
 # --- CONFIGURAÇÃO ---
-SERVER = 'zendarerp.database.windows.net'
-DATABASE = 'zendar23'
-USERNAME = 'zendar'
-SENHA    = 'Tiago23072004!' # <--- ⚠️ SUA SENHA
+SERVER = '' # <--- ⚠️ URL DO SERVIDOR
+DATABASE = '' # <--- ⚠️ NOME DO BANCO DE DADOS
+USERNAME = '' # <--- ⚠️ SEU USUÁRIO
+SENHA    = '' # <--- ⚠️ SUA SENHA
 DRIVER   = '{ODBC Driver 18 for SQL Server}'
 
 console = Console()
