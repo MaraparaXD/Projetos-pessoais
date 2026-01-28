@@ -23,12 +23,12 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # ⚠️ SUA SENHA AQUI
-SENHA_AZURE = "Tiago23072004!"
+SENHA_AZURE = ""
 
 def get_connection():
-    server = 'zendarerp.database.windows.net'
-    database = 'zendatabase'
-    username = 'zendar'
+    server = '' # URL do servidor
+    database = '' # Nome do banco de dados
+    username = '' # Seu usuário
     driver = '{ODBC Driver 18 for SQL Server}'
     
     conn_str = f'DRIVER={driver};SERVER={server};DATABASE={database};UID={username};PWD={SENHA_AZURE};Encrypt=yes;TrustServerCertificate=yes;Connection Timeout=30;'
