@@ -1,2 +1,0 @@
-Teste
-Print('Hello world!')
