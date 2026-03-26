@@ -1,11 +1,11 @@
 import requests
 import hashlib
 
-IP = "192.168.1.244:8080"
-SENHA = "260832leo"
+IP = "########:8080"
+SENHA = ""
 
 print("-" * 50)
-print("🕵️‍♂️ INICIANDO RAIO-X DO ROTEADOR INTELBRAS")
+print("INICIANDO RAIO-X")
 print("-" * 50)
 
 # 1. Preparando a chave
