@@ -1,0 +1,280 @@
+[10:23:40] 📝 [PEDINDO] Desconhecido (44:6D:57:43:45:17) solicitou renovação do IP ---
+[10:23:42] 📝 [PEDINDO] Desconhecido (D2:A2:FF:59:06:75) solicitou renovação do IP ---
+[10:23:43] 📝 [PEDINDO] Desconhecido (44:6D:57:43:45:17) solicitou renovação do IP ---
+[10:23:43] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.32
+[10:23:43] 📝 [PEDINDO] Desconhecido (D2:A2:FF:59:06:75) solicitou renovação do IP ---
+[10:23:45] 📝 [PEDINDO] Desconhecido (D2:A2:FF:59:06:75) solicitou renovação do IP ---
+[10:23:45] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.9
+[10:24:01] 📝 [PEDINDO] Desconhecido (4E:3C:50:04:5D:1F) solicitou renovação do IP ---
+[10:24:02] 📝 [PEDINDO] Desconhecido (4E:3C:50:04:5D:1F) solicitou renovação do IP ---
+[10:24:02] 📝 [PEDINDO] Desconhecido (4E:3C:50:04:5D:1F) solicitou renovação do IP ---
+[10:24:02] 🔍 [PROCURANDO] Desconhecido (4E:3C:50:04:5D:1F) está tentando entrar no Wi-Fi...
+[10:24:26] 📝 [PEDINDO] Desconhecido (96:17:44:7C:28:59) solicitou renovação do IP ---
+[10:24:27] 📝 [PEDINDO] Desconhecido (96:17:44:7C:28:59) solicitou renovação do IP ---
+[10:24:29] 📝 [PEDINDO] Desconhecido (96:17:44:7C:28:59) solicitou renovação do IP ---
+[10:24:29] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.13
+[10:24:36] 📝 [PEDINDO] Desconhecido (74:58:89:38:1B:2D) solicitou renovação do IP ---
+[10:24:40] 🔍 [PROCURANDO] Desconhecido (74:58:89:38:1B:2D) está tentando entrar no Wi-Fi...
+[10:24:40] 📝 [PEDINDO] Desconhecido (CA:63:A3:D8:78:1E) solicitou renovação do IP ---
+[10:24:42] 📝 [PEDINDO] Desconhecido (CA:63:A3:D8:78:1E) solicitou renovação do IP ---
+[10:24:42] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.18
+[10:25:00] 📝 [PEDINDO] Desconhecido (F8:EF:5D:28:E6:43) solicitou renovação do IP ---
+[10:25:01] 📝 [PEDINDO] Desconhecido (F8:EF:5D:28:E6:43) solicitou renovação do IP ---
+[10:25:02] 📝 [PEDINDO] Desconhecido (9A:A3:6F:D8:B3:93) solicitou renovação do IP ---
+[10:25:03] 📝 [PEDINDO] Desconhecido (F8:EF:5D:28:E6:43) solicitou renovação do IP ---
+[10:25:03] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.12
+[10:25:03] 📝 [PEDINDO] Desconhecido (9A:A3:6F:D8:B3:93) solicitou renovação do IP ---
+[10:25:05] 📝 [PEDINDO] Desconhecido (9A:A3:6F:D8:B3:93) solicitou renovação do IP ---
+[10:25:05] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.14
+[10:25:11] 📝 [PEDINDO] Desconhecido (16:A3:6A:A7:F7:97) solicitou renovação do IP ---
+[10:25:11] 📝 [PEDINDO] Desconhecido (BA:D4:B9:EF:48:01) solicitou renovação do IP ---
+[10:25:12] 📝 [PEDINDO] Desconhecido (16:A3:6A:A7:F7:97) solicitou renovação do IP ---
+[10:25:12] 📝 [PEDINDO] Desconhecido (BA:D4:B9:EF:48:01) solicitou renovação do IP ---
+[10:25:13] 📝 [PEDINDO] Desconhecido (16:A3:6A:A7:F7:97) solicitou renovação do IP ---
+[10:25:13] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.5
+[10:25:14] 📝 [PEDINDO] Desconhecido (BA:D4:B9:EF:48:01) solicitou renovação do IP ---
+[10:25:14] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.31
+[10:26:25] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[10:26:25] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[10:26:26] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[10:26:26] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[10:26:26] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.15
+[10:26:49] 🔍 [PROCURANDO] Desconhecido (32:E0:65:6D:8A:5C) está tentando entrar no Wi-Fi...
+[10:29:26] 📝 [PEDINDO] Desconhecido (4A:8D:66:69:1F:FC) solicitou renovação do IP ---
+[10:29:28] 📝 [PEDINDO] Desconhecido (4A:8D:66:69:1F:FC) solicitou renovação do IP ---
+[10:29:28] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.30
+[10:32:49] 🔍 [PROCURANDO] Desconhecido (3E:89:EF:F7:58:F7) está tentando entrar no Wi-Fi...
+[10:39:07] 📝 [PEDINDO] Desconhecido (8A:57:D4:1F:2B:E9) solicitou renovação do IP ---
+[10:39:08] 📝 [PEDINDO] Desconhecido (8A:57:D4:1F:2B:E9) solicitou renovação do IP ---
+[10:39:09] 📝 [PEDINDO] Desconhecido (8A:57:D4:1F:2B:E9) solicitou renovação do IP ---
+[10:39:09] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.26
+[10:44:43] 📝 [PEDINDO] Desconhecido (E4:26:D5:30:78:D6) solicitou renovação do IP ---
+[10:44:44] 📝 [PEDINDO] Desconhecido (E4:26:D5:30:78:D6) solicitou renovação do IP ---
+[10:44:44] 📝 [PEDINDO] Desconhecido (8A:57:D4:1F:2B:E9) solicitou renovação do IP ---
+[10:44:45] 📝 [PEDINDO] Desconhecido (E4:26:D5:30:78:D6) solicitou renovação do IP ---
+[10:44:45] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.2
+[10:44:46] 📝 [PEDINDO] Desconhecido (8A:57:D4:1F:2B:E9) solicitou renovação do IP ---
+[10:44:47] 📝 [PEDINDO] Desconhecido (8A:57:D4:1F:2B:E9) solicitou renovação do IP ---
+[10:44:47] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.26
+[10:44:48] 📝 [PEDINDO] Desconhecido (D2:A2:FF:59:06:75) solicitou renovação do IP ---
+[10:44:49] 📝 [PEDINDO] Desconhecido (D2:A2:FF:59:06:75) solicitou renovação do IP ---
+[10:44:51] 📝 [PEDINDO] Desconhecido (D2:A2:FF:59:06:75) solicitou renovação do IP ---
+[10:44:51] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.9
+[10:45:07] 📝 [PEDINDO] Desconhecido (4E:3C:50:04:5D:1F) solicitou renovação do IP ---
+[10:45:07] 📝 [PEDINDO] Desconhecido (E4:26:D5:30:78:D6) solicitou renovação do IP ---
+[10:45:07] 🚫 [NEGADO] Conflito de IP para Sistema!
+[10:45:08] 🔍 [PROCURANDO] Desconhecido (4E:3C:50:04:5D:1F) está tentando entrar no Wi-Fi...
+[10:45:11] 📝 [PEDINDO] Desconhecido (44:6D:57:43:45:17) solicitou renovação do IP ---
+[10:45:13] 📝 [PEDINDO] Desconhecido (44:6D:57:43:45:17) solicitou renovação do IP ---
+[10:45:13] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.32
+[10:45:19] 📝 [PEDINDO] Desconhecido (CA:63:A3:D8:78:1E) solicitou renovação do IP ---
+[10:45:20] 📝 [PEDINDO] Desconhecido (CA:63:A3:D8:78:1E) solicitou renovação do IP ---
+[10:45:23] 📝 [PEDINDO] Desconhecido (CA:63:A3:D8:78:1E) solicitou renovação do IP ---
+[10:45:23] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.18
+[10:45:38] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[10:45:39] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[10:45:39] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[10:45:40] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[10:45:40] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.15
+[10:45:57] 📝 [PEDINDO] Desconhecido (BA:D4:B9:EF:48:01) solicitou renovação do IP ---
+[10:45:58] 📝 [PEDINDO] Desconhecido (BA:D4:B9:EF:48:01) solicitou renovação do IP ---
+[10:46:00] 📝 [PEDINDO] Desconhecido (BA:D4:B9:EF:48:01) solicitou renovação do IP ---
+[10:46:00] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.31
+[10:46:39] 📝 [PEDINDO] Desconhecido (74:58:89:38:1B:2D) solicitou renovação do IP ---
+[10:46:39] 📝 [PEDINDO] Desconhecido (4E:3C:50:04:5D:1F) solicitou renovação do IP ---
+[10:46:39] 🚫 [NEGADO] Conflito de IP para Sistema!
+[10:46:39] 🔍 [PROCURANDO] Desconhecido (74:58:89:38:1B:2D) está tentando entrar no Wi-Fi...
+[10:50:31] 🔍 [PROCURANDO] Desconhecido (D6:FC:6D:3F:AA:55) está tentando entrar no Wi-Fi...
+[10:51:30] 📝 [PEDINDO] Desconhecido (16:A3:6A:A7:F7:97) solicitou renovação do IP ---
+[10:51:30] 📝 [PEDINDO] Desconhecido (D6:FC:6D:3F:AA:55) solicitou renovação do IP ---
+[10:51:30] 🚫 [NEGADO] Conflito de IP para Sistema!
+[10:51:30] 🔍 [PROCURANDO] Desconhecido (16:A3:6A:A7:F7:97) está tentando entrar no Wi-Fi...
+[10:54:10] 📝 [PEDINDO] Desconhecido (9A:A3:6F:D8:B3:93) solicitou renovação do IP ---
+[10:54:11] 📝 [PEDINDO] Desconhecido (9A:A3:6F:D8:B3:93) solicitou renovação do IP ---
+[10:54:13] 📝 [PEDINDO] Desconhecido (9A:A3:6F:D8:B3:93) solicitou renovação do IP ---
+[10:54:13] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.14
+[10:54:50] 📝 [PEDINDO] Desconhecido (96:17:44:7C:28:59) solicitou renovação do IP ---
+[10:54:51] 📝 [PEDINDO] Desconhecido (96:17:44:7C:28:59) solicitou renovação do IP ---
+[10:54:53] 📝 [PEDINDO] Desconhecido (96:17:44:7C:28:59) solicitou renovação do IP ---
+[10:54:53] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.13
+[11:09:01] 📝 [PEDINDO] Desconhecido (EA:28:17:B2:1A:63) solicitou renovação do IP ---
+[11:09:01] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.10
+[11:09:10] 📝 [PEDINDO] Desconhecido (44:6D:57:43:45:17) solicitou renovação do IP ---
+[11:09:13] 📝 [PEDINDO] Desconhecido (44:6D:57:43:45:17) solicitou renovação do IP ---
+[11:09:13] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.32
+[11:09:35] 📝 [PEDINDO] Desconhecido (4E:3C:50:04:5D:1F) solicitou renovação do IP ---
+[11:09:35] 📝 [PEDINDO] Desconhecido (4E:3C:50:04:5D:1F) solicitou renovação do IP ---
+[11:09:36] 📝 [PEDINDO] Desconhecido (4E:3C:50:04:5D:1F) solicitou renovação do IP ---
+[11:09:36] 🔍 [PROCURANDO] Desconhecido (4E:3C:50:04:5D:1F) está tentando entrar no Wi-Fi...
+[11:09:55] 📝 [PEDINDO] Desconhecido (5E:EA:99:D6:9C:23) solicitou renovação do IP ---
+[11:09:56] 📝 [PEDINDO] Desconhecido (5E:EA:99:D6:9C:23) solicitou renovação do IP ---
+[11:09:58] 📝 [PEDINDO] Desconhecido (5E:EA:99:D6:9C:23) solicitou renovação do IP ---
+[11:09:58] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.7
+[11:09:59] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[11:10:00] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[11:10:00] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[11:10:01] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[11:10:01] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.15
+[11:10:12] 📝 [PEDINDO] Desconhecido (4A:8D:66:69:1F:FC) solicitou renovação do IP ---
+[11:10:14] 📝 [PEDINDO] Desconhecido (4A:8D:66:69:1F:FC) solicitou renovação do IP ---
+[11:10:14] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.30
+[11:10:22] 🔍 [PROCURANDO] Desconhecido (BE:76:0A:41:E7:F4) está tentando entrar no Wi-Fi...
+[11:10:29] 📝 [PEDINDO] Desconhecido (BA:D4:B9:EF:48:01) solicitou renovação do IP ---
+[11:10:30] 📝 [PEDINDO] Desconhecido (BA:D4:B9:EF:48:01) solicitou renovação do IP ---
+[11:10:32] 📝 [PEDINDO] Desconhecido (BA:D4:B9:EF:48:01) solicitou renovação do IP ---
+[11:10:32] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.31
+[11:10:39] 📝 [PEDINDO] Desconhecido (74:58:89:38:1B:2D) solicitou renovação do IP ---
+[11:10:41] 📝 [PEDINDO] Desconhecido (D2:A2:FF:59:06:75) solicitou renovação do IP ---
+[11:10:41] 📝 [PEDINDO] Desconhecido (D2:A2:FF:59:06:75) solicitou renovação do IP ---
+[11:10:43] 📝 [PEDINDO] Desconhecido (D2:A2:FF:59:06:75) solicitou renovação do IP ---
+[11:10:43] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.9
+[11:10:55] 🔍 [PROCURANDO] Desconhecido (74:58:89:38:1B:2D) está tentando entrar no Wi-Fi...
+[11:42:02] 📝 [PEDINDO] Desconhecido (BA:D4:B9:EF:48:01) solicitou renovação do IP ---
+[11:42:03] 📝 [PEDINDO] Desconhecido (BA:D4:B9:EF:48:01) solicitou renovação do IP ---
+[11:42:05] 📝 [PEDINDO] Desconhecido (BA:D4:B9:EF:48:01) solicitou renovação do IP ---
+[11:42:05] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.31
+[11:44:22] 📝 [PEDINDO] Desconhecido (44:6D:57:43:45:17) solicitou renovação do IP ---
+[11:44:24] 📝 [PEDINDO] Desconhecido (44:6D:57:43:45:17) solicitou renovação do IP ---
+[11:44:24] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.32
+[11:44:27] 📝 [PEDINDO] Desconhecido (16:7A:C6:13:8D:28) solicitou renovação do IP ---
+[11:44:27] 📝 [PEDINDO] Desconhecido (16:7A:C6:13:8D:28) solicitou renovação do IP ---
+[11:44:29] 📝 [PEDINDO] Desconhecido (16:7A:C6:13:8D:28) solicitou renovação do IP ---
+[11:44:29] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.4
+[11:44:33] 📝 [PEDINDO] Desconhecido (5E:EA:99:D6:9C:23) solicitou renovação do IP ---
+[11:44:34] 📝 [PEDINDO] Desconhecido (5E:EA:99:D6:9C:23) solicitou renovação do IP ---
+[11:44:36] 📝 [PEDINDO] Desconhecido (5E:EA:99:D6:9C:23) solicitou renovação do IP ---
+[11:44:36] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.2
+[11:44:41] 📝 [PEDINDO] Desconhecido (4E:3C:50:04:5D:1F) solicitou renovação do IP ---
+[11:44:41] 📝 [PEDINDO] Desconhecido (4E:3C:50:04:5D:1F) solicitou renovação do IP ---
+[11:44:41] 📝 [PEDINDO] Desconhecido (4E:3C:50:04:5D:1F) solicitou renovação do IP ---
+[11:44:42] 🔍 [PROCURANDO] Desconhecido (4E:3C:50:04:5D:1F) está tentando entrar na rede...
+[11:45:12] 📝 [PEDINDO] Desconhecido (74:58:89:38:1B:2D) solicitou renovação do IP ---
+[11:45:13] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[11:45:13] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[11:45:14] 📝 [PEDINDO] Desconhecido (74:58:89:38:1B:2D) solicitou renovação do IP ---
+[11:45:14] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.5
+[11:45:14] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[11:45:14] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[11:45:15] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[11:45:15] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.15
+[11:45:24] 📝 [PEDINDO] Desconhecido (D2:A2:FF:59:06:75) solicitou renovação do IP ---
+[11:45:25] 📝 [PEDINDO] Desconhecido (D2:A2:FF:59:06:75) solicitou renovação do IP ---
+[11:45:27] 📝 [PEDINDO] Desconhecido (D2:A2:FF:59:06:75) solicitou renovação do IP ---
+[11:45:27] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.9
+[11:45:32] 📝 [PEDINDO] Desconhecido (9A:A3:6F:D8:B3:93) solicitou renovação do IP ---
+[11:45:33] 📝 [PEDINDO] Desconhecido (9A:A3:6F:D8:B3:93) solicitou renovação do IP ---
+[11:45:35] 📝 [PEDINDO] Desconhecido (9A:A3:6F:D8:B3:93) solicitou renovação do IP ---
+[11:45:35] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.14
+[11:45:45] 📝 [PEDINDO] Desconhecido (4A:8D:66:69:1F:FC) solicitou renovação do IP ---
+[11:45:46] 📝 [PEDINDO] Desconhecido (4A:8D:66:69:1F:FC) solicitou renovação do IP ---
+[11:45:46] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.30
+[11:46:50] 📝 [PEDINDO] Desconhecido (BA:D4:B9:EF:48:01) solicitou renovação do IP ---
+[11:46:51] 📝 [PEDINDO] Desconhecido (BA:D4:B9:EF:48:01) solicitou renovação do IP ---
+[11:46:53] 📝 [PEDINDO] Desconhecido (BA:D4:B9:EF:48:01) solicitou renovação do IP ---
+[11:46:53] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.31
+[11:48:02] 📝 [PEDINDO] Desconhecido (A2:C4:72:30:EA:28) solicitou renovação do IP ---
+[11:48:03] 📝 [PEDINDO] Desconhecido (A2:C4:72:30:EA:28) solicitou renovação do IP ---
+[11:48:05] 📝 [PEDINDO] Desconhecido (A2:C4:72:30:EA:28) solicitou renovação do IP ---
+[11:48:05] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.16
+[11:50:04] 🔍 [PROCURANDO] Desconhecido (66:23:D8:E0:5B:8E) está tentando entrar na rede...
+[11:50:44] 🔍 [PROCURANDO] Desconhecido (EA:28:17:B2:1A:63) está tentando entrar na rede...
+[11:50:46] 📝 [PEDINDO] Desconhecido (4E:05:8D:2B:B0:DA) solicitou renovação do IP ---
+[11:50:47] 📝 [PEDINDO] Desconhecido (4E:05:8D:2B:B0:DA) solicitou renovação do IP ---
+[11:50:49] 📝 [PEDINDO] Desconhecido (4E:05:8D:2B:B0:DA) solicitou renovação do IP ---
+[11:50:49] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.8
+[11:51:09] 🔍 [PROCURANDO] Desconhecido (0A:AF:0F:D4:DF:B9) está tentando entrar na rede...
+[11:59:40] 📝 [PEDINDO] Desconhecido (44:6D:57:43:45:17) solicitou renovação do IP ---
+[11:59:41] 📝 [PEDINDO] Desconhecido (44:6D:57:43:45:17) solicitou renovação do IP ---
+[11:59:41] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.32
+[12:00:39] 📝 [PEDINDO] Desconhecido (4A:8D:66:69:1F:FC) solicitou renovação do IP ---
+[12:00:40] 📝 [PEDINDO] Desconhecido (74:58:89:38:1B:2D) solicitou renovação do IP ---
+[12:00:41] 📝 [PEDINDO] Desconhecido (4A:8D:66:69:1F:FC) solicitou renovação do IP ---
+[12:00:42] 📝 [PEDINDO] Desconhecido (74:58:89:38:1B:2D) solicitou renovação do IP ---
+[12:00:42] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.5
+[12:00:44] 📝 [PEDINDO] Desconhecido (4A:8D:66:69:1F:FC) solicitou renovação do IP ---
+[12:00:44] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.30
+[12:01:05] 📝 [PEDINDO] Desconhecido (D2:A2:FF:59:06:75) solicitou renovação do IP ---
+[12:01:06] 📝 [PEDINDO] Desconhecido (D2:A2:FF:59:06:75) solicitou renovação do IP ---
+[12:01:08] 📝 [PEDINDO] Desconhecido (D2:A2:FF:59:06:75) solicitou renovação do IP ---
+[12:01:08] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.9
+[12:02:22] 🔍 [PROCURANDO] Desconhecido (6A:68:8B:C9:82:96) está tentando entrar na rede...
+[12:02:42] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[12:02:42] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[12:02:43] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[12:02:43] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[12:02:44] 📝 [PEDINDO] Desconhecido (66:E9:0F:76:94:59) solicitou renovação do IP ---
+[12:02:44] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.15
+[12:04:03] 🔍 [PROCURANDO] Desconhecido (7A:F7:29:D7:84:BE) está tentando entrar na rede...
+[12:04:42] 📝 [PEDINDO] Desconhecido (BA:D4:B9:EF:48:01) solicitou renovação do IP ---
+[12:04:43] 📝 [PEDINDO] Desconhecido (BA:D4:B9:EF:48:01) solicitou renovação do IP ---
+[12:04:45] 📝 [PEDINDO] Desconhecido (BA:D4:B9:EF:48:01) solicitou renovação do IP ---
+[12:04:45] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.31
+[12:11:26] 📝 [PEDINDO] Desconhecido (3E:89:EF:F7:58:F7) solicitou renovação do IP ---
+[12:11:26] 📝 [PEDINDO] Desconhecido (7A:F7:29:D7:84:BE) solicitou renovação do IP ---
+[12:11:26] 🚫 [NEGADO] Conflito de IP para Sistema!
+[12:11:26] 🔍 [PROCURANDO] Desconhecido (3E:89:EF:F7:58:F7) está tentando entrar na rede...
+[12:23:12] 📝 [PEDINDO] Desconhecido (D2:A2:FF:59:06:75) solicitou renovação do IP ---
+[12:23:13] 📝 [PEDINDO] Desconhecido (D2:A2:FF:59:06:75) solicitou renovação do IP ---
+[12:23:15] 📝 [PEDINDO] Desconhecido (D2:A2:FF:59:06:75) solicitou renovação do IP ---
+[12:23:15] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.9
+[12:23:22] 📝 [PEDINDO] Desconhecido (44:6D:57:43:45:17) solicitou renovação do IP ---
+[12:23:22] 📝 [PEDINDO] Desconhecido (16:7A:C6:13:8D:28) solicitou renovação do IP ---
+[12:23:23] 📝 [PEDINDO] Desconhecido (16:7A:C6:13:8D:28) solicitou renovação do IP ---
+[12:23:25] 📝 [PEDINDO] Desconhecido (44:6D:57:43:45:17) solicitou renovação do IP ---
+[12:23:25] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.32
+[12:23:25] 📝 [PEDINDO] Desconhecido (16:7A:C6:13:8D:28) solicitou renovação do IP ---
+[12:23:25] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.4
+[12:24:10] 📝 [PEDINDO] Desconhecido (74:58:89:38:1B:2D) solicitou renovação do IP ---
+[12:24:12] 📝 [PEDINDO] Desconhecido (74:58:89:38:1B:2D) solicitou renovação do IP ---
+[12:24:12] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.5
+[12:25:44] 📝 [PEDINDO] Desconhecido (BA:D4:B9:EF:48:01) solicitou renovação do IP ---
+[12:25:45] 📝 [PEDINDO] Desconhecido (BA:D4:B9:EF:48:01) solicitou renovação do IP ---
+[12:25:47] 📝 [PEDINDO] Desconhecido (BA:D4:B9:EF:48:01) solicitou renovação do IP ---
+[12:25:47] ✅ [CONECTADO] Sistema pegou o IP 192.168.3.31
+[12:29:51] 📝 [PEDINDO] Desconhecido (4E:3C:50:04:5D:1F) solicitou renovação do IP ---
+[12:29:51] 📝 [PEDINDO] Desconhecido (4E:3C:50:04:5D:1F) solicitou renovação do IP ---
+[12:29:52] 📝 [PEDINDO] Desconhecido (4E:3C:50:04:5D:1F) solicitou renovação do IP ---
+[12:29:52] 🔍 [PROCURANDO] Desconhecido (4E:3C:50:04:5D:1F) está tentando entrar na rede...
+[12:38:38] ✅ ENTRADA: Novo (8D:28) (IP: 192.168.3.4)
+[12:38:38] ✅ ENTRADA: Novo (45:17) (IP: 192.168.3.32)
+[12:38:40] ❌ SAÍDA: Novo (8D:28) (MAC: 16:7A:C6:13:8D:28 | IP: 192.168.3.4)
+[12:38:40] ❌ SAÍDA: Novo (45:17) (MAC: 44:6D:57:43:45:17 | IP: 192.168.3.32)
+[12:39:09] ✅ ENTRADA: Novo (06:75) (IP: 192.168.3.9)
+[12:39:11] ❌ SAÍDA: Novo (06:75) (MAC: D2:A2:FF:59:06:75 | IP: 192.168.3.9)
+[12:39:23] ✅ ENTRADA: Novo (1B:2D) (IP: 192.168.3.5)
+[12:39:23] ❌ SAÍDA: Novo (1B:2D) (MAC: 74:58:89:38:1B:2D | IP: 192.168.3.5)
+[12:50:06] ✅ ENTRADA: Novo (48:01) (IP: 192.168.3.31)
+[12:50:17] ✅ ENTRADA: Novo (F7:DB) (IP: 192.168.3.7)
+[12:50:20] ❌ SAÍDA: Novo (48:01) (IP: 192.168.3.31)
+[12:50:31] ❌ SAÍDA: Novo (F7:DB) (IP: 192.168.3.7)
+[12:52:39] ✅ ENTRADA: Novo (F7:97) (IP: 192.168.3.6)
+[12:52:53] ❌ SAÍDA: Novo (F7:97) (IP: 192.168.3.6)
+[13:01:53] ✅ ENTRADA: Novo (8D:28) (IP: 192.168.3.4)
+[13:02:02] ✅ ENTRADA: Novo (45:17) (IP: 192.168.3.32)
+[13:03:00] ✅ ENTRADA: Novo (1B:2D) (IP: 192.168.3.5)
+[13:03:27] ✅ ENTRADA: Novo (06:75) (IP: 192.168.3.9)
+[13:04:59] ❌ SAÍDA: Novo (8D:28) (IP: 192.168.3.4)
+[13:05:14] ❌ SAÍDA: Novo (45:17) (IP: 192.168.3.32)
+[13:06:03] ❌ SAÍDA: Novo (1B:2D) (IP: 192.168.3.5)
+[13:06:40] ❌ SAÍDA: Novo (06:75) (IP: 192.168.3.9)
+[13:41:07] ✅ CONECTADO: Novo (48:01) (IP: 192.168.3.31)
+[13:46:10] ❌ SAÍDA: Novo (48:01) (IP: 192.168.3.31)
+[14:00:32] ✅ CONECTADO: Novo (1B:2D) (IP: 192.168.3.5)
+[14:02:56] ✅ CONECTADO: Novo (EA:28) (IP: 192.168.3.11)
+[14:05:38] ❌ SAÍDA: Novo (1B:2D) (IP: 192.168.3.5)
+[16:27:22] ✅ CONECTADO: Novo (06:75) (IP: 192.168.3.18)
+[16:27:36] ✅ CONECTADO: Novo (1B:2D) (IP: 192.168.3.5)
+[16:32:21] ✅ CONECTADO: Novo (48:01) (IP: 192.168.3.31)
+[16:32:23] ❌ SAÍDA: Novo (06:75) (IP: 192.168.3.18)
+[16:32:42] ❌ SAÍDA: Novo (1B:2D) (IP: 192.168.3.5)
+[16:37:32] ❌ SAÍDA: Novo (48:01) (IP: 192.168.3.31)
+[16:50:14] ✅ CONECTADO: Novo (2B:E9) (IP: 192.168.3.15)
+[16:55:15] ✅ CONECTADO: Novo (DF:B9) (IP: 192.168.3.12)
+[16:55:22] ❌ SAÍDA: Novo (2B:E9) (IP: 192.168.3.15)
+[17:00:27] ❌ SAÍDA: Novo (DF:B9) (IP: 192.168.3.12)
+[17:02:03] ✅ CONECTADO: Novo (E8:28) (IP: 192.168.3.20)
+[17:03:08] ✅ CONECTADO: Novo (02:90) (IP: 192.168.3.19)
+[17:07:15] ❌ SAÍDA: Novo (E8:28) (IP: 192.168.3.20)
+[17:08:20] ❌ SAÍDA: Novo (02:90) (IP: 192.168.3.19)
+[17:14:26] ✅ CONECTADO: Novo (22:45) (IP: 192.168.3.23)
+[17:19:40] ❌ SAÍDA: Novo (22:45) (IP: 192.168.3.23)
