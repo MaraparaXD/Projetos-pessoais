@@ -1,6 +1,5 @@
 # ==============================================================================
-# SISTEMA DE MONITORAMENTO UNIFICADO - DISTRIBUIDORA DURÃES (MWV)
-# Arquivo: recebe_logs.py | Versão: 31.0 (COMPLETA - SEM RESUMOS)
+# SISTEMA DE MONITORAMENTO  - DISTRIBUIDORA DURÃES (MWV)
 # ==============================================================================
 
 import socket
@@ -32,13 +31,13 @@ MAP_FILE = os.path.join(DIRETORIO_RAIZ, "dados", "dispositivos.json")
 ESTADO_FILE = os.path.join(DIRETORIO_RAIZ, "dados", "estado_atual.json")
 
 # --------------------------------------------------------------------------
-# CONFIGURAÇÕES DE REDE (CORRIGIDAS PARA A DURÃES)
+# CONFIGURAÇÕES DE REDE 
 # --------------------------------------------------------------------------
-URL_LOGISTICA = "http://192.168.1.244:8080"  # IP do Roteador Intelbras
-USUARIO_ROTEADOR = "admin"
-SENHA_ROTEADOR = "260832leo"
+URL_LOGISTICA = ""  # IP do Roteador 
+USUARIO_ROTEADOR = "" 
+SENHA_ROTEADOR = ""
 
-REDE_TI_PREFIXO = "192.168.1."
+REDE_TI_PREFIXO = ""
 IP_ESCUTA_SYSLOG = "0.0.0.0"
 PORTA_SYSLOG = 514
 
@@ -101,7 +100,7 @@ def registrar_dispositivo(id_unico, ip, nome_padrao, setor):
         }
 
 # --------------------------------------------------------------------------
-# MOTOR LOGÍSTICA (BYPASS INTELBRAS)
+# MOTOR LOGÍSTICA 
 # --------------------------------------------------------------------------
 
 def realizar_login_logistica():
@@ -155,7 +154,7 @@ def tarefa_logistica():
         time.sleep(25)
 
 # --------------------------------------------------------------------------
-# MOTOR T.I. (SCANNER TURBO + SYSLOG)
+# MOTOR T.I
 # --------------------------------------------------------------------------
 
 def checar_presenca(ip):

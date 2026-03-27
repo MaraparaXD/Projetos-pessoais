@@ -15,27 +15,27 @@ NMAP_PATH = [r"C:\Program Files (x86)\Nmap\nmap.exe"]
 
 # Lista Mestre de Servidores
 SERVIDORES_DURAES = {
-    '192.168.1.2': 'TS Antigo (VM)',
-    '192.168.1.3': 'TS Novo (Dell Led Azul)',
-    '192.168.1.88': 'VM Sellers (no .101)',
-    '192.168.1.98': 'BI Tarkuss',
-    '192.168.1.99': 'Maxima Tech (Físico - Host Bsoft)',
-    '192.168.1.101': 'VM HOST (Físico)',
-    '192.168.1.108': 'BSOFT Office (VM)',
-    '192.168.1.109': 'BSOFT Tapajos (VM)',
-    '192.168.1.130': 'VMSERVER (API REPPOS)',
-    '192.168.1.180': 'Winthor Remoto (VPN)',
-    '192.168.1.202': 'WTA',
-    '192.168.1.204': 'VM Ware (Host TS Antigo/Winthor)',
-    '192.168.1.206': 'NFE Docfiscal'
+    '': 'TS Antigo (VM)',
+    '': 'TS Novo (Dell Led Azul)',
+    '': 'VM Sellers (no .101)',
+    '': 'BI Tarkuss',
+    '': 'Maxima Tech (Físico - Host Bsoft)',
+    '': 'VM HOST (Físico)',
+    '': 'BSOFT Office (VM)',
+    '': 'BSOFT Tapajos (VM)',
+    '': 'VMSERVER (API REPPOS)',
+    '': 'Winthor Remoto (VPN)',
+    '': 'WTA',
+    '': 'VM Ware (Host TS Antigo/Winthor)',
+    '': 'NFE Docfiscal'
 }
 
 def scan_duraes():
     try:
         nm = nmap.PortScanner(nmap_search_path=NMAP_PATH)
-        print("--- Iniciando Mapeamento Durães (Rede 192.168.1.0/24) ---")
+        print("--- Iniciando Mapeamento Durães (Rede #######/24) ---")
         
-        nm.scan(hosts='192.168.1.0/24', arguments='-sn')
+        nm.scan(hosts='#######/24', arguments='-sn')
         
         resultados = []
         for host in nm.all_hosts():
