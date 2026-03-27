@@ -41,6 +41,9 @@ Conhecimento essencial para sobreviver nas terras do terminal.
 Um sistema ERP simulado, construído com Python e Azure SQL.
 
 
+🔮 Oráculo da Logística — Wizard Tech
+
+Um artefato avançado de Business Intelligence forjado com Python, FastAPI e Streamlit. Este sistema lê pergaminhos caóticos de mercadores (CSVs despadronizados), prevê rupturas de estoque usando o poder do SQL Server e revela ilusões financeiras ocultas através de feitiços estatísticos (Z-Score). Um verdadeiro tanque de guerra de Engenharia de Dados para proteger o tesouro de qualquer guilda.
 
 🎯 Missão do Aventureiro
 
