@@ -33,7 +33,7 @@ Um artefato avançado de Business Intelligence forjado com **Python, FastAPI e S
 ### 🛰️ Posto Avançado — Sentinela de Cyberitu
 Um sistema de vigilância proativo forjado em **Python e Flask**. Este artefato monitora as fronteiras entre o Reino da T.I. e as Terras da Logística, utilizando feitiços de escaneamento ICMP e invasão de portais Intelbras. Possui uma Flag de Alerta Vermelho que pulsa sempre que um forasteiro desconhecido cruza os perímetros da rede.
 
-###👁️‍🗨️ O Oráculo de Crédito — CNPJ Analytics
+### 👁️‍🗨️ O Oráculo de Crédito — CNPJ Analytics
 Um motor de vidência financeira e risco forjado com Python (FastAPI), OracleDB e Docker. Este artefato invoca conhecimentos de pergaminhos públicos (BrasilAPI/ViaCEP) em tempo real e os cruza com os cofres da guilda. O resultado é um "Risk Score" automático que blinda a concessão de ouro e revela a verdadeira face de cada mercador (CNPJ), tudo protegido por uma barreira intransponível de tokens e cache em memória.
 
 ---
