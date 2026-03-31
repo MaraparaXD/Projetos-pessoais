@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  cnpj_analytics:
+    build: .
+    container_name: cnpj_analytics_app
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    environment:
+      - TZ=America/Santarem

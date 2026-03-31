@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNPJ Analytics | Inteligência de Crédito</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-10px); } 75% { transform: translateX(10px); } }
+        .shake-error { animation: shake 0.4s ease-in-out; border-color: #ef4444 !important; }
+    </style>
+</head>
+<body class="bg-[#0f172a] text-gray-100 min-h-screen font-sans antialiased">
+
+    <div id="loginScreen" class="min-h-screen flex items-center justify-center p-4 animate-in fade-in duration-500">
+        <div class="bg-[#1e293b] p-10 rounded-[3rem] shadow-2xl border border-gray-700/50 max-w-md w-full text-center">
+            <div class="mb-8">
+                <i class="fa-solid fa-chart-pie text-5xl text-blue-500 mb-4"></i>
+                <h1 class="text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300 tracking-tighter leading-none mb-2">CNPJ ANALYTICS</h1>
+                <p class="text-gray-500 text-[10px] font-black uppercase tracking-[0.2em]">Acesso Restrito do Sistema</p>
+            </div>
+            <div class="mb-8 text-left">
+                <label class="block text-[10px] font-black text-gray-400 uppercase mb-3 ml-2"><i class="fa-solid fa-key text-red-400 mr-1"></i> Token de Segurança</label>
+                <input type="password" id="loginToken" placeholder="••••••••" class="w-full bg-[#0f172a] border-2 border-gray-700 rounded-2xl p-4 text-white focus:border-blue-500 outline-none transition-all font-bold tracking-widest text-center" onkeypress="if(event.key === 'Enter') entrarSistema()">
+            </div>
+            <button id="btnLogin" onclick="entrarSistema()" class="w-full bg-blue-600 hover:bg-blue-500 active:scale-[0.98] text-white font-black py-4 rounded-2xl transition-all shadow-xl shadow-blue-900/30 flex items-center justify-center gap-3 uppercase tracking-widest text-sm">
+                <i class="fa-solid fa-right-to-bracket"></i> Acessar
+            </button>
+        </div>
+    </div>
+
+    <div id="mainApp" class="hidden max-w-6xl mx-auto p-4 md:p-10 animate-in fade-in duration-500">
+        
+        <header class="flex flex-col md:flex-row justify-between items-center mb-10 border-b border-gray-800 pb-8 gap-6">
+            <div>
+                <h1 class="text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300 tracking-tighter">
+                    CNPJ ANALYTICS <span class="text-sm font-medium text-gray-500">v3.0</span>
+                </h1>
+                <p class="text-gray-500 text-[10px] font-black uppercase tracking-[0.3em] mt-1">Inteligência Financeira e Logística</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="bg-blue-500/10 px-6 py-3 rounded-2xl border border-blue-500/20 text-center">
+                    <span id="dataAtual" class="text-[10px] text-blue-400 font-mono uppercase font-bold"></span>
+                </div>
+                <button onclick="sairSistema()" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 px-4 py-3 rounded-2xl border border-red-500/20 transition-all text-[10px] font-black uppercase tracking-widest flex items-center gap-2">
+                    <i class="fa-solid fa-power-off"></i> Sair
+                </button>
+            </div>
+        </header>
+
+        <div class="bg-[#1e293b] p-8 rounded-[2.5rem] shadow-2xl border border-gray-700/50 mb-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-end">
+                <div class="md:col-span-2">
+                    <label class="block text-[10px] font-black text-gray-500 uppercase mb-3 ml-2">CNPJ do Cliente</label>
+                    <input type="text" id="cnpjInput" placeholder="00.000.000/0000-00" class="w-full bg-[#0f172a] border-2 border-gray-700 rounded-2xl p-4 text-white focus:border-blue-500 outline-none transition-all font-bold tracking-widest text-center">
+                </div>
+                <div>
+                    <label class="block text-[10px] font-black text-gray-500 uppercase mb-3 ml-2">De:</label>
+                    <input type="date" id="dataInicio" class="w-full bg-[#0f172a] border-2 border-gray-700 rounded-2xl p-4 text-white focus:border-blue-500 outline-none transition-all">
+                </div>
+                <div>
+                    <label class="block text-[10px] font-black text-gray-500 uppercase mb-3 ml-2">Até:</label>
+                    <input type="date" id="dataFim" class="w-full bg-[#0f172a] border-2 border-gray-700 rounded-2xl p-4 text-white focus:border-blue-500 outline-none transition-all">
+                </div>
+                <div class="md:col-span-4 mt-2">
+                    <button onclick="consultar()" id="btnPesquisar" class="w-full bg-blue-600 hover:bg-blue-500 active:scale-[0.98] text-white font-black py-4 rounded-2xl transition-all shadow-xl shadow-blue-900/30 flex items-center justify-center gap-4 text-sm tracking-widest uppercase">
+                        <i class="fa-solid fa-bolt text-lg"></i> Executar Auditoria
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultado" class="hidden space-y-6 animate-in fade-in duration-500">
+            
+            <div class="flex justify-end mb-2">
+                <button onclick="gerarCSV()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3 rounded-xl font-black uppercase tracking-widest text-[10px] flex items-center gap-2 shadow-lg shadow-emerald-900/20 transition-all">
+                    <i class="fa-solid fa-file-excel text-sm"></i> Exportar (CSV)
+                </button>
+            </div>
+
+            <div class="bg-[#1e293b] p-10 rounded-[3rem] border-l-[16px] border-blue-500 shadow-2xl flex flex-col md:flex-row justify-between items-center gap-8 relative overflow-hidden">
+                <div class="z-10">
+                    <h2 id="nomeEmpresa" class="text-4xl font-black uppercase tracking-tighter leading-none mb-4">---</h2>
+                    <div class="flex flex-wrap gap-3 items-center">
+                        <span id="badgeStatus" class="px-5 py-2 rounded-full text-[11px] font-black uppercase">---</span>
+                        <span class="px-5 py-2 rounded-full text-[11px] font-black uppercase bg-gray-900/80 text-gray-300 border border-gray-700 flex items-center gap-2">
+                            <i class="fa-solid fa-map-location-dot text-blue-400"></i>
+                            <span id="txtLogistica">Aguardando Rota...</span>
+                        </span>
+                        <span class="px-5 py-2 rounded-full text-[11px] font-black uppercase bg-gray-900/80 text-gray-500 border border-gray-700">WINTHOR.SQL</span>
+                    </div>
+                </div>
+                <div class="bg-gray-900/60 p-6 rounded-3xl border border-gray-700 text-center min-w-[180px] z-10 backdrop-blur-md">
+                    <p class="text-[9px] text-gray-500 uppercase font-black mb-2 tracking-[0.2em]">Risk Score</p>
+                    <p id="riskLabel" class="text-2xl font-black text-blue-400 uppercase">Analisando</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-[#1e293b] to-gray-800 p-8 rounded-[2.5rem] border border-gray-700 shadow-lg flex items-start gap-6">
+                <div class="bg-blue-500/20 p-4 rounded-2xl text-blue-400">
+                    <i class="fa-solid fa-brain text-3xl"></i>
+                </div>
+                <div>
+                    <p class="text-[10px] font-black uppercase text-blue-400 tracking-[0.3em] mb-1">Análise Neural de Risco</p>
+                    <h3 id="txtSugestao" class="text-2xl font-black text-white uppercase mb-2">---</h3>
+                    <p id="txtMotivo" class="text-sm text-gray-400 font-medium">---</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-[#1e293b] p-8 rounded-[2.5rem] border border-gray-800 shadow-lg">
+                    <p class="text-gray-500 text-[10px] font-black uppercase mb-3 tracking-widest">Limite Disponível</p>
+                    <h3 id="limiteCredito" class="text-3xl font-black text-blue-400">R$ 0,00</h3>
+                </div>
+                <div id="cardAtraso" class="bg-[#1e293b] p-8 rounded-[2.5rem] border border-gray-800 shadow-lg transition-all">
+                    <p class="text-gray-500 text-[10px] font-black uppercase mb-3 tracking-widest">Inadimplência</p>
+                    <h3 id="valorAtraso" class="text-3xl font-black text-red-500">R$ 0,00</h3>
+                    <p id="qtdAtraso" class="text-[10px] text-gray-600 mt-3 font-bold uppercase tracking-tighter">0 Títulos Pendentes</p>
+                </div>
+                <div class="bg-[#1e293b] p-8 rounded-[2.5rem] border border-gray-800 shadow-lg">
+                    <p class="text-gray-500 text-[10px] font-black uppercase mb-3 tracking-widest">Compras no Período</p>
+                    <h3 id="valorVendas" class="text-3xl font-black text-emerald-400">R$ 0,00</h3>
+                </div>
+            </div>
+
+            <div class="bg-[#1e293b] p-10 rounded-[3rem] border border-gray-800/50 shadow-xl">
+                <div class="h-[300px] w-full"><canvas id="graficoVendas"></canvas></div>
+            </div>
+        </div>
+
+        <div class="mt-16">
+            <div class="flex justify-between items-center mb-6 px-4">
+                <h3 class="text-xs font-black uppercase text-gray-500 tracking-[0.3em] flex items-center gap-3"><i class="fa-solid fa-history"></i> Histórico de Consultas</h3>
+                <button onclick="limparHistorico()" class="bg-red-900/20 hover:bg-red-600 text-red-500 hover:text-white border border-red-500/30 px-5 py-2 rounded-xl transition-all text-[10px] font-black uppercase tracking-widest flex items-center gap-2"><i class="fa-solid fa-trash-can"></i> Limpar Histórico</button>
+            </div>
+            <div class="bg-[#1e293b]/50 rounded-[2rem] border border-gray-800/50 overflow-hidden backdrop-blur-sm">
+                <table class="w-full text-left"><tbody id="listaHistorico"></tbody></table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let chartInstance = null;
+        let authToken = ""; 
+        let cacheGlobalDados = null; 
+        
+        const formatBRL = (val) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(val);
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const hoje = new Date();
+            const umAnoAtras = new Date();
+            umAnoAtras.setFullYear(hoje.getFullYear() - 1);
+            document.getElementById('dataFim').value = hoje.toISOString().split('T')[0];
+            document.getElementById('dataInicio').value = umAnoAtras.toISOString().split('T')[0];
+            document.getElementById('dataAtual').innerText = hoje.toLocaleDateString('pt-BR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            
+            const savedToken = localStorage.getItem('cnpj_analytics_token');
+            if(savedToken) {
+                try {
+                    const res = await fetch('/api/v1/auth/validate', { method: 'GET', headers: { 'X-API-Token': savedToken } });
+                    if(res.ok) {
+                        authToken = savedToken;
+                        document.getElementById('loginScreen').classList.add('hidden');
+                        document.getElementById('mainApp').classList.remove('hidden');
+                        renderHistorico();
+                    } else { localStorage.removeItem('cnpj_analytics_token'); }
+                } catch (e) { console.error("Erro Auto-Login"); }
+            }
+        });
+
+        async function entrarSistema() {
+            const tokenInput = document.getElementById('loginToken');
+            const tokenValue = tokenInput.value;
+            const btn = document.getElementById('btnLogin');
+            if (!tokenValue) { alert("Token Obrigatório"); return; }
+            const originalBtnText = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Autenticando...';
+            btn.disabled = true;
+            tokenInput.classList.remove('shake-error'); 
+            try {
+                const response = await fetch('/api/v1/auth/validate', { method: 'GET', headers: { 'X-API-Token': tokenValue } });
+                if (!response.ok) throw new Error();
+                localStorage.setItem('cnpj_analytics_token', tokenValue);
+                authToken = tokenValue;
+                document.getElementById('loginScreen').classList.add('hidden');
+                document.getElementById('mainApp').classList.remove('hidden');
+                renderHistorico();
+            } catch (error) {
+                tokenInput.classList.add('shake-error'); tokenInput.value = "";
+            } finally { btn.innerHTML = originalBtnText; btn.disabled = false; }
+        }
+
+        function sairSistema() {
+            localStorage.removeItem('cnpj_analytics_token'); authToken = "";
+            document.getElementById('loginToken').value = "";
+            document.getElementById('mainApp').classList.add('hidden');
+            document.getElementById('loginScreen').classList.remove('hidden');
+            document.getElementById('resultado').classList.add('hidden'); 
+        }
+
+        async function consultar() {
+            const cnpjRaw = document.getElementById('cnpjInput').value;
+            const cnpj = cnpjRaw.replace(/\D/g, "");
+            const dataInicio = document.getElementById('dataInicio').value;
+            const dataFim = document.getElementById('dataFim').value;
+            const btn = document.getElementById('btnPesquisar');
+
+            if (!cnpj || cnpj.length < 14) { alert("CNPJ inválido."); return; }
+            const originalBtnText = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin text-lg"></i> <span class="ml-2">Buscando...</span>';
+            btn.disabled = true;
+
+            try {
+                const response = await fetch('/api/v1/contabilidade/unificar', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'X-API-Token': authToken },
+                    body: JSON.stringify({ cnpj, data_inicio: dataInicio, data_fim: dataFim })
+                });
+
+                if (response.status === 403) { alert("Sessão Expirada."); sairSistema(); return; }
+                if (!response.ok) throw new Error("Cliente não encontrado.");
+
+                const data = await response.json();
+                cacheGlobalDados = { ...data, cnpj_pesquisado: cnpjRaw };
+                
+                document.getElementById('nomeEmpresa').innerText = data.empresa_real;
+                document.getElementById('limiteCredito').innerText = formatBRL(data.winthor.limite);
+                document.getElementById('valorVendas').innerText = formatBRL(data.winthor.vendas_ano);
+                document.getElementById('valorAtraso').innerText = formatBRL(data.atrasos.valor_total);
+                document.getElementById('qtdAtraso').innerText = `${data.atrasos.quantidade} Títulos Pendentes`;
+                document.getElementById('txtLogistica').innerText = `${data.logistica.bairro} • ${data.logistica.cidade} / ${data.logistica.uf}`;
+
+                document.getElementById('txtSugestao').innerText = data.inteligencia.sugestao;
+                document.getElementById('txtMotivo').innerText = data.inteligencia.motivo;
+
+                const objSugestao = document.getElementById('txtSugestao');
+                if(data.inteligencia.sugestao.includes("AUMENTAR") || data.inteligencia.sugestao.includes("LIBERAR")) {
+                    objSugestao.className = "text-2xl font-black text-emerald-400 uppercase mb-2";
+                } else if(data.inteligencia.sugestao.includes("REDUZIR") || data.inteligencia.sugestao.includes("BLOQUEIO")) {
+                    objSugestao.className = "text-2xl font-black text-red-400 uppercase mb-2";
+                } else {
+                    objSugestao.className = "text-2xl font-black text-blue-400 uppercase mb-2";
+                }
+
+                const statusGov = (data.governo.situacao_cadastral || "OFFLINE").toUpperCase();
+                const limite = data.winthor.limite;
+                const atraso = data.atrasos.valor_total;
+                const badge = document.getElementById('badgeStatus');
+                const riskLabel = document.getElementById('riskLabel');
+                const cardAtraso = document.getElementById('cardAtraso');
+
+                const statusCriticos = ["BAIXADA", "INAPTA", "SUSPENSA", "NULA"];
+                cardAtraso.className = "bg-[#1e293b] p-8 rounded-[2.5rem] border border-gray-800 shadow-lg transition-all";
+
+                if (statusCriticos.includes(statusGov)) {
+                    badge.innerText = `🚨 CRÍTICO: ${statusGov}`;
+                    badge.className = "px-5 py-2 rounded-full text-[11px] font-black bg-red-600 text-white animate-bounce shadow-lg shadow-red-900/50";
+                    riskLabel.innerText = "BLOQUEADO"; riskLabel.className = "text-2xl font-black text-red-500";
+                } else if (atraso > (limite * 0.1) && limite > 0) {
+                    badge.innerText = "🛑 RISCO ALTO"; badge.className = "px-5 py-2 rounded-full text-[11px] font-black bg-red-900 text-white border border-red-500";
+                    riskLabel.innerText = "AVALIAR"; riskLabel.className = "text-2xl font-black text-yellow-500";
+                    cardAtraso.classList.add('border-red-500', 'bg-red-900/10'); cardAtraso.classList.remove('border-gray-800');
+                } else {
+                    badge.innerText = statusGov === "OFFLINE" ? "📡 MODO LOCAL" : `STATUS: ${statusGov}`;
+                    badge.className = statusGov === "OFFLINE" ? "px-5 py-2 rounded-full text-[11px] font-black bg-blue-900/50 text-blue-400 border border-blue-500/50" : "px-5 py-2 rounded-full text-[11px] font-black bg-emerald-600 text-white shadow-lg shadow-emerald-900/30";
+                    riskLabel.innerText = "CONFIÁVEL"; riskLabel.className = "text-2xl font-black text-blue-400";
+                }
+
+                if (data.evolucao_grafico) renderizarGrafico(data.evolucao_grafico.labels, data.evolucao_grafico.valores);
+                document.getElementById('resultado').classList.remove('hidden');
+                salvarHistorico(data.empresa_real, data.cnpj || cnpj);
+
+            } catch (error) { alert(error.message); } finally { btn.innerHTML = originalBtnText; btn.disabled = false; }
+        }
+
+        function gerarCSV() {
+            if (!cacheGlobalDados) return alert("Realize uma consulta primeiro!");
+            let csvContent = "\uFEFF"; 
+            csvContent += "Empresa;CNPJ;Status Receita;Localidade;Limite Disponivel;Vendas no Periodo;Atrasos;Qtd Titulos;Sugestao Inteligencia\n";
+            const d = cacheGlobalDados;
+            const linha = [
+                d.empresa_real,
+                d.cnpj_pesquisado,
+                d.governo.situacao_cadastral,
+                `${d.logistica.cidade}/${d.logistica.uf}`,
+                d.winthor.limite.toFixed(2).replace('.', ','),
+                d.winthor.vendas_ano.toFixed(2).replace('.', ','),
+                d.atrasos.valor_total.toFixed(2).replace('.', ','),
+                d.atrasos.quantidade,
+                d.inteligencia.sugestao
+            ].join(";");
+            csvContent += linha + "\n";
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement("a");
+            const url = URL.createObjectURL(blob);
+            link.setAttribute("href", url);
+            link.setAttribute("download", `Analise_${d.cnpj_pesquisado.replace(/\D/g, "")}.csv`);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function renderizarGrafico(labels, valores) {
+            const ctx = document.getElementById('graficoVendas').getContext('2d');
+            if (chartInstance) chartInstance.destroy();
+            chartInstance = new Chart(ctx, { type: 'bar', data: { labels: labels, datasets: [{ label: 'Vendas', data: valores, backgroundColor: '#3b82f6', borderRadius: 8 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { grid: { color: '#334155' } }, x: { grid: { display: false } } } } });
+        }
+
+        function salvarHistorico(empresa, cnpj) {
+            let hist = JSON.parse(localStorage.getItem('cnpj_analytics_hist') || '[]');
+            hist = hist.filter(h => h.cnpj !== cnpj); hist.unshift({ empresa, cnpj });
+            if (hist.length > 5) hist.pop(); localStorage.setItem('cnpj_analytics_hist', JSON.stringify(hist)); renderHistorico();
+        }
+
+        function renderHistorico() {
+            const hist = JSON.parse(localStorage.getItem('cnpj_analytics_hist') || '[]');
+            const lista = document.getElementById('listaHistorico');
+            if (hist.length === 0) return lista.innerHTML = '<tr><td class="p-10 text-center text-gray-700 text-[10px] font-black tracking-[0.5em] uppercase">Histórico Vazio</td></tr>';
+            lista.innerHTML = hist.map(item => `<tr class="border-t border-gray-800/50 hover:bg-gray-800/80 cursor-pointer" onclick="carregarHistorico('${item.cnpj}')"><td class="p-6"><div class="text-[11px] font-black uppercase text-gray-400">${item.empresa}</div><div class="text-[10px] text-gray-600 font-mono mt-1">${item.cnpj}</div></td><td class="p-6 text-right"><i class="fa-solid fa-arrow-right text-gray-700 text-lg group-hover:text-blue-500 transition-colors"></i></td></tr>`).join('');
+        }
+        function carregarHistorico(cnpj) { document.getElementById('cnpjInput').value = cnpj; window.scrollTo({ top: 0, behavior: 'smooth' }); consultar(); }
+        function limparHistorico() { if(confirm("Tem certeza que deseja apagar o log de consultas?")) { localStorage.removeItem('cnpj_analytics_hist'); renderHistorico(); } }
+    </script>
+</body>
+</html>

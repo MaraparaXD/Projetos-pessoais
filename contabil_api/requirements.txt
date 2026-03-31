@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+requests
+oracledb
+python-dotenv
+pydantic
