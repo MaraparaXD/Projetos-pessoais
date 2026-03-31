@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 from services import LedgerService
 import os
 
-# Nome da API atualizado
+# Nome da API 
 app = FastAPI(title="CNPJ Analytics API", version="3.0 Master")
 
 app.add_middleware(
@@ -22,7 +22,7 @@ app.add_middleware(
 api_key_header = APIKeyHeader(name="X-API-Token", auto_error=True)
 
 def verificar_token(api_key: str = Security(api_key_header)):
-    # Sugestão: Atualize seu .env para API_TOKEN=Admin2026
+   
     token_correto = os.getenv("API_TOKEN", "Admin2026")
     if api_key != token_correto:
         raise HTTPException(status_code=403, detail="Acesso negado. Token inválido.")
