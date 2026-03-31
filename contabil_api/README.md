@@ -36,25 +36,22 @@ Para invocar este sistema, os seguintes conhecimentos foram combinados:
 
 ## ⚙️ Ritual de Invocação (Como rodar localmente)
 
-1. Clone este repositório para o seu inventário local:
-```bash
-git clone [https://github.com/MaraparaXD/Projetos-pessoais.git](https://github.com/MaraparaXD/Projetos-pessoais.git)
 Forje o seu amuleto de conexão:
-Copie o pergaminho dados.env.example e renomeie-o para dados.env. Grave as suas verdadeiras runas de poder dentro dele (Tokens, Usuário e Senha do Oracle).
+Grave as suas verdadeiras runas de poder dentro do dados.env (Tokens, Usuário e Senha do Oracle).
 
 Desperte o leviatã mágico (Docker):
 No seu terminal, dentro da pasta do projeto, entoe o cântico de invocação:
-
-Bash
+```
+***
 docker compose up -d --build
+```
 Contemple a Vidência:
-Abra o seu portal local no navegador:
 
+Abra o seu portal local no navegador:
+```
 🔮 Espelho da Verdade (Dashboard): http://localhost:8000
 
 📜 Grimório Interativo (Swagger UI): http://localhost:8000/docs para testar as feitiçarias da API diretamente.
-
-
 ***
-
+```
 Pronto! Só jogar no seu GitHub agora. O repositório vai ficar lendário! ⚔️🚀
