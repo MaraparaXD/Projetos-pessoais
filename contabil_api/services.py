@@ -69,7 +69,7 @@ class LedgerService:
         empresa_gov, situacao = None, "OFFLINE"
         dados_logistica = {"cidade": "Desconhecida", "uf": "-", "bairro": "Não Mapeado"}
         
-        # 1. Integração Governo & ViaCEP
+        #  Integração Governo & ViaCEP
         try:
             resp = requests.get(f"https://brasilapi.com.br/api/cnpj/v1/{cnpj_limpo}", timeout=3)
             if resp.status_code == 200:
@@ -87,13 +87,13 @@ class LedgerService:
         except Exception: 
             pass
 
-        # 2. Integração ERP Winthor
+        #  Integração ERP Winthor
         resumo = LedgerService.get_winthor_data(cnpj_limpo, data_inicio, data_fim)
         grafico = LedgerService.get_monthly_sales(cnpj_limpo, data_inicio, data_fim)
 
         if not resumo: return {"erro": "Cliente não localizado no banco de dados."}
 
-        # 3. Motor Neural de Crédito (CNPJ Analytics)
+        # Motor Neural de Crédito (CNPJ Analytics)
         limite = resumo["limite"]
         vendas = resumo["vendas_periodo"]
         atraso = resumo["valor_em_atraso"]
