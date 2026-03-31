@@ -37,8 +37,9 @@ Para invocar este sistema, os seguintes conhecimentos foram combinados:
 ## ⚙️ Ritual de Invocação (Como rodar localmente)
 
 Forje o seu amuleto de conexão:
+```
 Grave as suas verdadeiras runas de poder dentro do dados.env (Tokens, Usuário e Senha do Oracle).
-
+```
 Desperte o leviatã mágico (Docker):
 No seu terminal, dentro da pasta do projeto, entoe o cântico de invocação:
 ```
