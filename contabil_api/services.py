@@ -19,7 +19,7 @@ class LedgerService:
             conn = oracledb.connect(user=user, password=password, dsn=dsn)
             cursor = conn.cursor()
             
-            # Nota: O schema DURAES. foi mantido para o código funcionar no seu ambiente atual.
+            ### Nota: Mude a query para uma que faça sentindo no seu banco de dados
             query = """
                 SELECT c.CLIENTE, c.LIMCRED,
                     (SELECT SUM(f.VLTOTAL) FROM DURAES.PCNFSAID f WHERE f.CODCLI = c.CODCLI AND f.DTFAT BETWEEN TO_DATE(:inicio, 'YYYY-MM-DD') AND TO_DATE(:fim, 'YYYY-MM-DD')) as VENDAS,
@@ -47,6 +47,7 @@ class LedgerService:
         try:
             conn = oracledb.connect(user=user, password=password, dsn=dsn)
             cursor = conn.cursor()
+            ### Nota: Mude a query para uma que faça sentindo no seu banco de dados
             query = """
                 SELECT TO_CHAR(f.DTFAT, 'MM/YYYY') as MES, SUM(f.VLTOTAL) as TOTAL
                 FROM DURAES.PCNFSAID f JOIN DURAES.PCCLIENT c ON f.CODCLI = c.CODCLI
