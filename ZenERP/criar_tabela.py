@@ -3,10 +3,10 @@ import pyodbc
 import time
 
 # --- CONFIGURAÇÃO ---
-SERVER = 'zendarerp.database.windows.net'
-DATABASE = 'zendatabase'
-USERNAME = 'zendar'
-SENHA    = 'Tiago23072004!' 
+SERVER = ''
+DATABASE = ''
+USERNAME = ''
+SENHA    = '' 
 DRIVER   = '{ODBC Driver 18 for SQL Server}'
 
 def criar_tabelas():
