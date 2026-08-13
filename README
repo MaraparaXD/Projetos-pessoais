@@ -1,44 +1,29 @@
-# 🧭 Jornada pelos Projetos de um Aventureiro da Tecnologia
+# Projetos Pessoais
 
-> **Saudações, viajante!** > Você acaba de entrar no repositório de projetos pessoais de um explorador do mundo da tecnologia. Prepare seu inventário, pois nesta jornada você encontrará artefatos forjados ao longo de missões intensas de aprendizado, automação e arquitetura de dados.
+Coleção de projetos e estudos desenvolvidos de forma independente, cobrindo automação, integração de sistemas, bancos de dados e monitoramento de infraestrutura.
 
-Escolha seu caminho 👇
+## Projetos aplicados
 
----
+| Projeto | Descrição | Stack principal |
+|---|---|---|
+| [`contabil_api`](./contabil_api) | API de análise de crédito: cruza dados públicos de CNPJ com histórico financeiro interno (ERP) e recomenda ação de crédito | Python, FastAPI, Oracle, Docker |
+| [`wizard_api`](./wizard_api) | Normalização de relatórios de vendas em CSV desestruturado, cruzamento com estoque e detecção de anomalias de preço | Python, FastAPI, SQL Server, Streamlit |
+| [`Mapeamento de rede`](./Mapeamento%20de%20rede) | Monitoramento de rede em tempo real com alerta para dispositivos não identificados | Python, Flask, sockets/threading |
+| `ZenERP` | Sistema ERP simples construído para gestão de dados de negócio | Python, Azure SQL |
+| `Gerenciador de Tabelas(AzureSQL)` | Ferramenta para criação e atualização de tabelas em Azure SQL | Python |
+| `RE-MAID` | Modelagem de banco de dados (PostgreSQL) e dashboards de Service Desk / inventário em Power BI | SQL, Power BI |
 
-### 🐍 Guilda dos Magos Python — COD PYTHON
-Aqui estão os pergaminhos de estudo em **Python**. Feitiços de lógica e estudos profundos de um conhecimento antigo, praticados diariamente para fortalecer minhas habilidades na arte da programação.
+## Estudos e utilitários
 
-### 📜 Arquivos do Conselho — Doc de Requisitos RE-MAID
-Nestes documentos antigos, você encontrará os registros de requisitos do projeto RE-MAID. Eles mostram como uma missão lendária começa: com planejamento, regras claras e visão estratégica de produto.
+| Pasta | Conteúdo |
+|---|---|
+| `COD PYTHON` | Exercícios de lógica de programação e fundamentos de Python |
+| `Scripts LINUX UBUNTU` | Scripts Bash para automação e administração de servidores Linux (backup, monitoramento de serviço, etc.) |
+| `POWER GIT` | Script Bash que automatiza o fluxo de commit/push do Git |
+| `Doc Requesitos RE-MAID` | Documento de levantamento de requisitos do projeto RE-MAID |
 
-### 🏗️ Oficina dos Engenheiros de Dados — Gerenciador de Tabelas
-Nesta forja tecnológica, desenvolvi uma ferramenta vital em **Python** para criar, estruturar e atualizar tabelas em **Azure SQL**. A base de qualquer castelo de dados.
+## Sobre este repositório
 
-### ⚔️ Ferramenta Lendária — Power Git
-Criado em uma missão especial de agilidade, este artefato automatiza commits e versionamento no **Git** de forma rápida e eficiente. Um item de utilidade rara para qualquer aventureiro do código.
+Este repositório reúne projetos de naturezas diferentes num único lugar, por conveniência de organização pessoal. Os projetos aplicados (tabela acima) têm README próprio com detalhes de arquitetura e instruções de execução — vale a pena entrar em cada pasta para ver o contexto completo.
 
-### 🏰 Projeto RE-MAID — O Reino dos Dados
-Aqui repousa um ecossistema onde o **PostgreSQL** se conecta ao **Power BI**, transformando dados brutos em visões estratégicas. Uma terra onde bancos de dados encontram a verdadeira inteligência visual.
-
-### 🐧 Torre do Pinguim Sábio — Scripts Linux Ubuntu
-Nesta torre gelada, foram transcritos scripts em **Bash** para automação e administração de servidores **Linux**. Conhecimento essencial para sobreviver nas terras áridas do terminal.
-
-### 🧩 Cidade Mecânica — ZenERP
-Um sistema ERP prático, construído com as engrenagens do **Python** e a robustez do **Azure SQL** para resolver dores reais de negócio.
-
-### 🔮 Oráculo da Logística — Wizard Tech
-Um artefato avançado de Business Intelligence forjado com **Python, FastAPI e Streamlit**. Este sistema lê pergaminhos caóticos de mercadores (CSVs despadronizados), prevê rupturas de estoque usando o poder do **SQL Server** e revela ilusões financeiras ocultas através de feitiços estatísticos (Z-Score). Um verdadeiro tanque de guerra da Engenharia de Dados.
-
-### 🛰️ Posto Avançado — Sentinela de Cyberitu
-Um sistema de vigilância proativo forjado em **Python e Flask**. Este artefato monitora as fronteiras entre o Reino da T.I. e as Terras da Logística, utilizando feitiços de escaneamento ICMP e invasão de portais Intelbras. Possui uma Flag de Alerta Vermelho que pulsa sempre que um forasteiro desconhecido cruza os perímetros da rede.
-
-### 👁️‍🗨️ O Oráculo de Crédito — CNPJ Analytics
-Um motor de vidência financeira e risco forjado com Python (FastAPI), OracleDB e Docker. Este artefato invoca conhecimentos de pergaminhos públicos (BrasilAPI/ViaCEP) em tempo real e os cruza com os cofres da guilda. O resultado é um "Risk Score" automático que blinda a concessão de ouro e revela a verdadeira face de cada mercador (CNPJ), tudo protegido por uma barreira intransponível de tokens e cache em memória.
-
----
-
-### 🎯 Missão do Aventureiro
-Este repositório representa minha jornada de evolução na tecnologia — cada pasta é uma missão concluída, cada projeto um nível conquistado.
-
-*Novas aventuras estão sempre sendo adicionadas conforme continuo explorando o universo de dados, desenvolvimento e automação.*
+**Nota de segurança:** nenhum destes projetos deve ser usado em produção sem revisão prévia de segurança — em particular, revisar autenticação, CORS e gestão de credenciais antes de qualquer deploy real.
