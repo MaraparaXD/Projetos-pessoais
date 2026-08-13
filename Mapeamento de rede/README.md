@@ -1,75 +1,43 @@
-# 🛰️ A Sentinela de Cyberitu — Vigilância das Terras de Durães
+# Monitor de Rede e Inventário Ativo
 
-> *"Nas fronteiras entre a Tecnologia e a Logística, nenhum pacote viaja sem ser notado. O Olho de Cyberitu tudo vê."*
+Sistema de monitoramento de rede em tempo real, construído para unificar a visibilidade de dispositivos em duas redes distintas (TI e Logística) de uma distribuidora, com alerta automático para dispositivos não identificados.
 
-Bem-vindo ao Posto Avançado de Monitoramento. Este artefato foi forjado para resolver um desafio real nas terras de Santarém/PA: unificar a visão de dispositivos em redes distintas e garantir a segurança proativa da Distribuidora Durães.
+## O que o sistema faz
 
----
+O sistema roda em duas partes que se comunicam entre si:
 
-## 📜 A Natureza do Artefato (Como Funciona)
+1. **Coletor (`recebe_logs.py`)** — processo em background que:
+   - Faz varredura ativa (ping multithread) na rede de TI para mapear dispositivos conectados.
+   - Autentica na interface administrativa de um roteador Intelbras via requisição HTTP para listar os dispositivos conectados na rede de Logística (contorna a ausência de API oficial do roteador).
+   - Mantém um servidor Syslog (UDP, porta 514) escutando por mensagens DHCP, para detectar em tempo real quando um novo dispositivo entra na rede.
+   - Persiste o estado atual em `dados/estado_atual.json`.
 
-O Cyberitu não é apenas um código; é um ecossistema de vigilância dividido em duas frentes mágicas que trabalham em harmonia:
+2. **Dashboard (`dashboard_duraes.py`)** — interface web (Flask) que:
+   - Exibe os dispositivos ativos, atualizando via polling a cada poucos segundos.
+   - Sinaliza com um alerta visual qualquer dispositivo cujo identificador não conste em uma lista de dispositivos conhecidos (`dados/dispositivos.json`).
 
-### 🐍 O Batedor (`recebe_logs.py`)
-É o motor de busca assíncrono que patrulha as redes.
-* **Invasão Silenciosa (Bypass Intelbras):** Realiza um "login ninja" via requisições HTTP para extrair a lista de dispositivos conectados diretamente do roteador da Logística (`192.168.1.244`), superando as barreiras do firmware original.
-* **Velocidade Arcana (Multithreading):** Utiliza o poder do processamento paralelo para disparar centenas de pings simultâneos, mapeando o setor de Tecnologia em segundos sem travar o sistema.
-* **Ouvido Atento (Receptor Syslog):** Escuta na porta UDP 514 por mensagens de DHCP, identificando instantaneamente quando um novo viajante (dispositivo) solicita entrada na rede.
+## Stack
 
-### 🏰 A Torre de Vigia (`dashboard_duraes.py`)
-É a interface mística que apresenta a verdade aos líderes da guilda.
-* **Visão em Tempo Real:** Através de feitiços de AJAX/JavaScript, o painel se atualiza a cada 3 segundos sem que a página precise ser recarregada.
-* **O Sinal de Alerta (Flag Red):** Uma luz vermelha pulsante surge ao lado de qualquer dispositivo cujo ID não conste no Grande Códice de Nomes, alertando sobre possíveis intrusos.
+- Python 3.10+
+- Flask (dashboard web)
+- `requests` (autenticação/consulta ao roteador)
+- Sockets nativos + threading (varredura de rede e servidor Syslog)
 
----
+## Como rodar localmente
 
-## 📦 Inventário Necessário (Pré-requisitos)
+Pré-requisito: acesso à rede local (ou VPN) onde os dispositivos estão.
 
-Para conjurar este sistema, você deve ter em seu inventário:
-* **Linguagem:** Python 3.10 ou superior.
-* **Bibliotecas de Apoio:** * `Flask` (Para erguer a Torre Web).
-  * `requests` (Para as missões de invasão ao roteador).
-* **Hardware:** Estar conectado fisicamente (ou via túnel VPN) às redes da Distribuidora.
+1. Configure `dados/dispositivos.json` com os IPs e nomes dos dispositivos já conhecidos — sem isso, tudo aparece como "novo".
+2. Em `recebe_logs.py`, preencha as constantes de configuração (URL do roteador, usuário/senha, prefixo da rede de TI). **Não deixe credenciais reais hardcoded no código-fonte** — use variáveis de ambiente ou um arquivo `.env` ignorado pelo Git.
+3. Em dois terminais separados:
+   ```bash
+   python recebe_logs.py      # inicia a coleta/varredura
+   python dashboard_duraes.py # sobe o painel web
+   ```
+4. Acesse `http://localhost:5000`.
 
----
+## Observações
 
-## ⚡ O Ritual de Conjuração (Como executar localmente)
-
-Siga estes passos para ativar a sentinela em seu próprio território:
-
-### 1. Preparando o Terreno
-Certifique-se de que a estrutura de pastas está organizada corretamente:
-```text
-Caminho/
-├── dashboard_duraes.py
-├── recebe_logs.py
-├── LOGO_DURAES_VETORIZADA.png
-└── dados/
-    └── dispositivos.json
-2. O Grande Códice (dispositivos.json)
-Edite este pergaminho para dar nome aos IPs conhecidos. Sem isso, todos aparecerão com a flag de "Novo".
-
-JSON
-{
-  "192.168.1.50": "PC T.I. - Zendar",
-  "10.0.0.182": "Coletor Logística 01"
-}
-3. Ajustando as Coordenadas
-Abra o recebe_logs.py e certifique-se de que as coordenadas (IPs e Senhas) estão corretas para a rede local:
-
-Python
-URL_LOGISTICA = "[http://192.168.1.244:8080](http://192.168.1.244:8080)"
-USUARIO_ROTEADOR = "admin"
-SENHA_ROTEADOR = "SUA_SENHA_AQUI"
-4. Iniciando a Vigília
-Abra dois terminais (pergaminhos de comando) e execute:
-
-Terminal 1: Inicia o escaneamento e a patrulha.
-
-Bash
-python recebe_logs.py 
-Terminal 2: Ergue o painel web.
-
-Bash
-python dashboard_duraes.py 
-Acesse http://localhost:5000 em seu navegador e contemple a rede protegida!
+- Projeto construído para um cenário real (rede de uma distribuidora), com IPs e nomes de host específicos removidos/generalizados no código publicado.
+- O acesso ao roteador via requisição HTTP direta é um contorno específico do modelo/firmware usado — não é uma técnica genérica de "bypass".
+- Como boa prática, nenhuma credencial deve permanecer no código-fonte; use variáveis de ambiente.
