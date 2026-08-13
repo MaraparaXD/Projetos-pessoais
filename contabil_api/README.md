@@ -1,58 +1,52 @@
-# 👁️‍🗨️ CNPJ Analytics - O Oráculo de Crédito (Motor de Risco & Vidência Financeira)
+# CNPJ Analytics — Motor de Análise de Crédito
 
-"Nas encruzilhadas do mercado, onde falsos mercadores ocultam suas dívidas e moedas desaparecem, este Oráculo foi forjado para revelar a verdadeira face de cada guilda."
+API assíncrona que consolida dados públicos de CNPJ com o histórico financeiro interno de um cliente (ERP WinThor / Oracle) e gera uma recomendação automática de crédito, com base em regras de negócio configuráveis.
 
-Bem-vindo ao **CNPJ Analytics**, um artefato implacável de inteligência financeira e logística. Desenvolvido para cruzar pergaminhos públicos em tempo real com os cofres da sua guilda, gerando um "Risk Score" automático e blindando a concessão de ouro (crédito) contra maus pagadores.
+## O que o sistema faz
 
-## 🏰 Arquitetura do Artefato
+1. Recebe um CNPJ e um período de consulta.
+2. Busca a situação cadastral da empresa em tempo real na **BrasilAPI** (Receita Federal) e enriquece o endereço via **ViaCEP**.
+3. Cruza esses dados com o histórico interno no Oracle (limite de crédito, vendas no período, títulos em atraso).
+4. Aplica um conjunto de regras de negócio (situação cadastral, % de atraso sobre o limite, volume de compras vs. limite aprovado) e retorna uma recomendação: manter crédito, bloquear, reduzir limite, aumentar limite ou liberar crédito — com o motivo explícito.
+5. Resultado é cacheado em memória por 60 minutos, para evitar reprocessar a mesma consulta repetidamente.
 
-A magia deste projeto acontece em duas camadas perfeitamente sincronizadas, aprisionadas dentro de uma dimensão de bolso (Docker):
+## Stack
 
-* **O Motor das Sombras (Backend - FastAPI):** O núcleo assíncrono do sistema. Uma API de altíssima velocidade conectada aos cofres ancestrais de um banco de dados Oracle. Responsável por receber invocações, consultar oráculos externos e calcular o destino do crédito.
-* **O Espelho da Verdade (Frontend - HTML & Tailwind):** Um Dashboard interativo e elegante, desenhado com runas visuais (Chart.js) para que a alta liderança compreenda os vereditos financeiros sem precisar decifrar códigos.
+- **Backend:** Python 3.11+, FastAPI, Uvicorn (assíncrono)
+- **Banco de dados:** Oracle (via `oracledb`), consultando uma base ERP (WinThor)
+- **APIs externas:** BrasilAPI (dados de CNPJ), ViaCEP (endereço)
+- **Frontend:** HTML5, TailwindCSS, Chart.js (dashboard simples de visualização)
+- **Infra:** Docker e Docker Compose
 
-## ✨ Feitiços e Encantamentos (Features Avançadas)
+## Autenticação
 
-👁️ **Visão Verdadeira (Consumo de APIs em Tempo Real):** Integração mística com os oráculos do governo (BrasilAPI e ViaCEP) para desmascarar CNPJs, validar status cadastrais e mapear territórios de logística num piscar de olhos.
+Todos os endpoints (exceto o dashboard estático) exigem um token no header `X-API-Token`, validado contra uma variável de ambiente.
 
-⚡ **Celeridade Arcana (Cache em Memória):** Um feitiço de retenção de conhecimento. Consultas repetidas de um mesmo CNPJ são respondidas instantaneamente pela memória espiritual da aplicação, poupando a mana (processamento) do banco de dados principal.
+## Como rodar localmente
 
-🛡️ **Abjuração de Intrusos (Autenticação via Token):** Barreira de proteção intransponível. Apenas magos portando o amuleto sagrado (`X-API-Token` no header) podem cruzar os portões da API e solicitar vidências.
+1. Clone o repositório.
+2. Copie `dados.env.example` para `dados.env` (crie esse arquivo se ainda não existir) e preencha:
+   ```
+   ORACLE_USER=...
+   ORACLE_PASSWORD=...
+   ORACLE_CONNECT_STRING=...
+   API_TOKEN=...
+   ```
+3. Suba o ambiente:
+   ```bash
+   docker compose up -d --build
+   ```
+4. Acesse:
+   - Dashboard: http://localhost:8000
+   - Documentação interativa (Swagger UI): http://localhost:8000/docs
 
-⚖️ **Julgamento Neural (Risk Score Automático):** Algoritmo que cruza faturamento, histórico de inadimplência e o status da Receita Federal para ditar o destino do mercador: Manter Crédito, Bloquear Operações ou Expandir Limites.
+## Observações
 
-🐳 **Magia de Isolamento (Containerização Docker):** Todo o ecossistema vive isolado dentro de um container. Imune às pragas do ambiente externo e pronto para ser invocado em qualquer reino (máquina Windows, Linux ou Mac) sem quebrar dependências.
+- A query SQL em `services.py` foi escrita para o schema de um ERP específico (WinThor/Oracle) — para reutilizar em outro banco, ajuste as tabelas/colunas na consulta.
+- Este é um projeto pessoal de estudo, construído para resolver um caso real de análise de crédito. Não recomendado para uso em produção sem revisão de segurança (ver observação abaixo).
 
-## 📖 Grimório de Tecnologias
+## Melhorias conhecidas (próximos passos)
 
-Para invocar este sistema, os seguintes conhecimentos foram combinados:
-
-* **Linguagem Anciã:** Python 3.11+
-* **Cofre de Dados:** OracleDB (com integração nativa)
-* **Estrutura Backend:** FastAPI, Uvicorn (Assíncrono)
-* **Círculo de Invocação (Infra):** Docker & Docker Compose
-* **Pergaminhos de Clarividência:** Integração REST com BrasilAPI e ViaCEP
-* **Ilusionismo Visual:** HTML5, TailwindCSS, Chart.js
-
-## ⚙️ Ritual de Invocação (Como rodar localmente)
-
-Forje o seu amuleto de conexão:
-```
-Grave as suas verdadeiras runas de poder dentro do dados.env (Tokens, Usuário e Senha do Oracle).
-```
-Desperte o leviatã mágico (Docker):
-No seu terminal, dentro da pasta do projeto, entoe o cântico de invocação:
-```
-***
-docker compose up -d --build
-```
-Contemple a Vidência:
-
-Abra o seu portal local no navegador:
-```
-🔮 Espelho da Verdade (Dashboard): http://localhost:8000
-
-📜 Grimório Interativo (Swagger UI): http://localhost:8000/docs para testar as feitiçarias da API diretamente.
-***
-```
-Pronto! Só jogar no seu GitHub agora. O repositório vai ficar lendário! ⚔️🚀
+- Restringir `allow_origins` do CORS em vez do wildcard `*` atual.
+- Remover o valor padrão hardcoded do token de API (hoje há um fallback fraco caso a variável de ambiente não esteja definida).
+- Mover a lógica de regras de crédito para uma configuração externa (hoje os limiares estão fixos no código).
