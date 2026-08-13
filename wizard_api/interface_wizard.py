@@ -5,7 +5,7 @@ import io
 import plotly.express as px
 
 # --- CONFIGURAÇÃO DA PÁGINA E MEMÓRIA ---
-st.set_page_config(page_title="A Visão do Mago", layout="wide", page_icon="🧙‍♂️")
+st.set_page_config(page_title="Wizard API — Auditoria de Estoque", layout="wide", page_icon="📦")
 
 # Memória anti-amnésia
 if 'dados_processados' not in st.session_state:
@@ -28,13 +28,13 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title("A Visão do Mago🧙‍♂️")
+st.title("📦 Wizard API — Auditoria de Estoque")
 st.markdown("Plataforma de inteligência para gestão proativa de estoque e automação de suprimentos.")
 st.markdown("---")
 
 # --- BARRA LATERAL ---
 st.sidebar.header("⚙️ Configuração de Runa")
-api_key = st.sidebar.text_input("Runa de Segurança", type="password", value="1234")
+api_key = st.sidebar.text_input("Chave de API", type="password", value="", help="A mesma chave definida em WIZARD_API_KEY no servidor.")
 st.sidebar.markdown("---")
 if st.sidebar.button("Reescrever Grimório"):
     st.session_state.dados_processados = None

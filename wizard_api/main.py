@@ -1,19 +1,36 @@
 import io
+import os
+import sys
 import time
 import pyodbc
 import pandas as pd
 from fastapi import FastAPI, UploadFile, File, HTTPException, Header
 from fastapi.responses import StreamingResponse
+from dotenv import load_dotenv
 
-app = FastAPI(
-    title="A Visão do Mago",
-    
-)
+load_dotenv()
 
-API_KEY_LOCAL = "1234"
+app = FastAPI(title="Wizard API — Normalização e Auditoria de Estoque")
+
+# Sem valor padrão: se WIZARD_API_KEY não estiver definida, a aplicação recusa
+# subir. Um valor "de fábrica" hardcoded (como "1234", que havia antes) não
+# protege nada — qualquer pessoa que leia o código já tem acesso.
+API_KEY_LOCAL = os.getenv("WIZARD_API_KEY")
+if not API_KEY_LOCAL:
+    sys.exit("ERRO: variável de ambiente WIZARD_API_KEY não definida. Veja .env.example.")
+
+DB_SERVER = os.getenv("WIZARD_DB_SERVER", "localhost")
+DB_NAME = os.getenv("WIZARD_DB_NAME", "ENGINE")
+
 
 def get_db_connection():
-    return pyodbc.connect("Driver={ODBC Driver 17 for SQL Server};Server=localhost;Database=ENGINE;Trusted_Connection=yes;")
+    # Trusted_Connection=yes usa autenticação do Windows (sem senha em texto
+    # aqui) — mantido para ambientes locais. Se o banco exigir usuário/senha,
+    # troque para variáveis de ambiente adicionais, seguindo o mesmo padrão
+    # usado no contabil_api.
+    return pyodbc.connect(
+        f"Driver={{ODBC Driver 17 for SQL Server}};Server={DB_SERVER};Database={DB_NAME};Trusted_Connection=yes;"
+    )
 
 def registrar_pendencias(df_alertas: pd.DataFrame):
     if df_alertas.empty: return

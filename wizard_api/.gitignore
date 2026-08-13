@@ -1,0 +1,42 @@
+# --- Segredos e configuração local (NUNCA fazer commit) ---
+.env
+*.env
+!*.env.example
+dados.env
+!dados.env.example
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+venv/
+.venv/
+env/
+ENV/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Streamlit ---
+.streamlit/secrets.toml
+
+# --- Logs e dados temporários ---
+*.log
+*.tmp
+*.bak
+
+# --- Docker ---
+*.pid
+
+# --- Editor / IDE ---
+.vscode/
+.idea/
+*.swp
+
+# --- Sistema operacional ---
+.DS_Store
+Thumbs.db

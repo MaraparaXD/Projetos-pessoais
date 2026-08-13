@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pandas
+pyodbc
+streamlit
+plotly
+requests
+python-dotenv
+python-multipart

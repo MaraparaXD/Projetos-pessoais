@@ -7,24 +7,43 @@ from typing import Optional
 from datetime import datetime, timedelta
 from services import LedgerService
 import os
+import sys
 
-# Nome da API 
-app = FastAPI(title="CNPJ Analytics API", version="3.0 Master")
+# Nome da API
+app = FastAPI(title="CNPJ Analytics API", version="3.1")
+
+# --- CORS ---
+# Nunca combine allow_origins=["*"] com allow_credentials=True: é uma
+# configuração insegura (e a maioria dos navegadores já rejeita essa
+# combinação). As origens permitidas vêm de uma variável de ambiente,
+# separadas por vírgula — em desenvolvimento local, defina
+# CORS_ALLOWED_ORIGINS=http://localhost:8000 (ou a porta do seu frontend).
+origens_permitidas = [
+    o.strip() for o in os.getenv("CORS_ALLOWED_ORIGINS", "").split(",") if o.strip()
+]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origins=origens_permitidas,
+    allow_credentials=False,
+    allow_methods=["GET", "POST"],
+    allow_headers=["X-API-Token", "Content-Type"],
 )
 
 api_key_header = APIKeyHeader(name="X-API-Token", auto_error=True)
 
+# --- Token de API ---
+# Sem valor padrão: se API_TOKEN não estiver definido, a aplicação recusa
+# subir. Um token "de fábrica" hardcoded (como havia antes) é uma senha
+# fraca e previsível — qualquer pessoa que leia o código consegue acessar
+# a API em qualquer ambiente onde a variável não tenha sido trocada.
+TOKEN_CORRETO = os.getenv("API_TOKEN")
+if not TOKEN_CORRETO:
+    sys.exit("ERRO: variável de ambiente API_TOKEN não definida. Veja dados.env.example.")
+
+
 def verificar_token(api_key: str = Security(api_key_header)):
-   
-    token_correto = os.getenv("API_TOKEN", "Admin2026")
-    if api_key != token_correto:
+    if api_key != TOKEN_CORRETO:
         raise HTTPException(status_code=403, detail="Acesso negado. Token inválido.")
     return api_key
 

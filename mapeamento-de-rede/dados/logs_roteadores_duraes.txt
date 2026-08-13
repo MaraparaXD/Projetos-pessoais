@@ -1,0 +1,18 @@
+[20/03/2026 09:34:08] Origem: 192.168.1.116 | Evento: TESTE DE LOG TIAGO
+[20/03/2026 10:05:08] Origem: 192.168.1.79 | Evento: <13> DHCPD: Recv REQUEST from F8:EF:5D:28:E6:43
+[20/03/2026 10:05:08] Origem: 192.168.1.79 | Evento: <13> DHCPD: REQUEST ip 803a8c0 already reserved by 4E:3C:50:04:5D:1F
+[20/03/2026 10:05:08] Origem: 192.168.1.79 | Evento: <13> DHCPD: Send NAK
+[20/03/2026 10:05:08] Origem: 192.168.1.79 | Evento: <13> DHCPD: Recv DISCOVER from F8:EF:5D:28:E6:43
+[20/03/2026 10:05:08] Origem: 192.168.1.79 | Evento: <13> DHCPD: Send OFFER with ip 192.168.3.12
+[20/03/2026 10:05:15] Origem: 192.168.1.79 | Evento: <13> DHCPD: Recv REQUEST from CA:63:A3:D8:78:1E
+[20/03/2026 10:05:17] Origem: 192.168.1.79 | Evento: <13> DHCPD: Recv REQUEST from CA:63:A3:D8:78:1E
+[20/03/2026 10:05:17] Origem: 192.168.1.79 | Evento: <13> DHCPD: Send ACK to 192.168.3.18
+[10:11:41] 📝 [PEDINDO IP] Dispositivo BA:D4:B9:EF:48:01 está solicitando o IP ---. (Original: <13> DHCPD: Recv REQUEST from BA:D4:B9:EF:48:01)
+[10:11:42] 📝 [PEDINDO IP] Dispositivo BA:D4:B9:EF:48:01 está solicitando o IP ---. (Original: <13> DHCPD: Recv REQUEST from BA:D4:B9:EF:48:01)
+[10:11:44] 📝 [PEDINDO IP] Dispositivo BA:D4:B9:EF:48:01 está solicitando o IP ---. (Original: <13> DHCPD: Recv REQUEST from BA:D4:B9:EF:48:01)
+[10:11:44] ✅ [CONEXÃO FIRMADA] O IP 192.168.3.31 agora pertence ao dispositivo Desconhecido. (Original: <13> DHCPD: Send ACK to 192.168.3.31)
+[10:11:56] 📝 [PEDINDO IP] Dispositivo 9A:A3:6F:D8:B3:93 está solicitando o IP ---. (Original: <13> DHCPD: Recv REQUEST from 9A:A3:6F:D8:B3:93)
+[10:11:56] 📝 [PEDINDO IP] Dispositivo F8:EF:5D:28:E6:43 está solicitando o IP ---. (Original: <13> DHCPD: REQUEST ip c03a8c0 already reserved by F8:EF:5D:28:E6:43)
+[10:11:56] 🚫 [ACESSO NEGADO] Conflito de IP! O dispositivo Desconhecido não pôde conectar. (Original: <13> DHCPD: Send NAK)
+[10:11:56] 🔍 [PROCURANDO WI-FI] Dispositivo 9A:A3:6F:D8:B3:93 quer entrar na rede. (Original: <13> DHCPD: Recv DISCOVER from 9A:A3:6F:D8:B3:93)
+[10:11:56] 🤝 [OFERECENDO IP] Roteador ofereceu o IP 192.168.3.14 para Desconhecido. (Original: <13> DHCPD: Send OFFER with ip 192.168.3.14)
