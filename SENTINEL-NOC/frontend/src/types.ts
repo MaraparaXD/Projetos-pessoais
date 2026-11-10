@@ -1,0 +1,9 @@
+export type User = { id: string; email: string; name: string; role: 'Admin' | 'Analyst' | 'Viewer'; active: boolean }
+export type Page<T> = {items: T[]; total: number; limit: number; offset: number}
+export type Incident = {id: string; title: string; host_name: string; service_name: string | null; severity: string; status: string; integration_id: string; assignee_id: string | null; created_at: string; updated_at: string; last_seen_at: string; acknowledged_at: string | null; resolved_at: string | null; flapping: boolean; reopen_count: number; synthetic: boolean}
+export type Event = {id: string; external_id: string; host_name: string; service_name: string | null; state: string; output: string; event_type: string; observed_at: string; created_at: string; out_of_order: boolean; synthetic: boolean}
+export type Integration = {id: string; name: string; kind: string; enabled: boolean; synthetic: boolean; created_at: string}
+export type Comment = {id: string; user_id: string; body: string; created_at: string}
+export type Host = {id: string; name: string; integration_id: string; services: {id: string; name: string}[]}
+export type Audit = {id: string; action: string; actor_id: string | null; entity_id: string | null; details: Record<string, unknown>; correlation_id: string; created_at: string}
+export type Dashboard = {generated_at: string; window_hours: number; open_incidents: number; affected_hosts: number; critical_services: number; events_24h: number; events_by_severity: Record<string, number>; incidents_by_status: Record<string, number>; trend: {hour: string; events: number}[]; mean_acknowledge_seconds: number | null; mean_resolve_seconds: number | null; synthetic_events: number; total_events: number; notifications: {enabled: boolean; pending: number | null}}

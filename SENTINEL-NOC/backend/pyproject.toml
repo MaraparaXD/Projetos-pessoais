@@ -1,0 +1,31 @@
+[project]
+name = "sentinel-noc"
+version = "0.1.0"
+description = "SENTINEL NOC — modular monitoring event and incident platform"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.115,<1", "uvicorn[standard]>=0.34,<1",
+  "sqlalchemy>=2.0,<2.1", "alembic>=1.14,<2",
+  "psycopg[binary]>=3.2,<4", "pydantic-settings>=2.7,<3",
+  "pwdlib[argon2]>=0.2,<1", "httpx>=0.28,<1",
+  "redis>=5,<7", "prometheus-client>=0.21,<1", "cryptography>=44,<48",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "pytest-cov>=6,<8", "ruff>=0.11,<1"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", ".."]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501", "B008"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["app", "scripts", "tests"]

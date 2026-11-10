@@ -19,6 +19,7 @@ Os projetos mais completos foram migrados para repositórios individuais — cad
 
 | Pasta | Descrição | Stack principal |
 |---|---|---|
+| [`SENTINEL NOC`](./SENTINEL-NOC) | Plataforma de eventos e incidentes de infraestrutura com correlação, flapping, RBAC e auditoria | Python, FastAPI, React, PostgreSQL, Redis, Docker |
 | [`RE-MAID`](./RE-MAID) | Modelagem de banco de dados (PostgreSQL) para inventário de TI e service desk, com dashboards em Power BI | SQL, Power BI |
 | [`Doc Requesitos RE-MAID`](./Doc%20Requesitos%20RE-MAID) | Levantamento de requisitos do projeto RE-MAID | — |
 | [`Gerenciador de Tabelas(AzureSQL)`](./Gerenciador%20de%20Tabelas(AzureSQL)) | Ferramenta CLI para administrar tabelas em Azure SQL por menu interativo | Python |
